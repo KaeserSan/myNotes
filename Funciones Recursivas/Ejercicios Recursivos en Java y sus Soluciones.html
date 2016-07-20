@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Ejercicios Recursivos en Java y sus Soluciones</title> <script async="" data-rocketoptimized="true" data-rocketsrc="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.es.znn593i-Tg4.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCObMRTyt0w0G4IOHaE00MhM7nkQKw/cb=gapi.loaded_1"></script><script async="" data-rocketoptimized="true" data-rocketsrc="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.es.znn593i-Tg4.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCObMRTyt0w0G4IOHaE00MhM7nkQKw/cb=gapi.loaded_0"></script><script data-rocketoptimized="true" data-rocketsrc="//www.google-analytics.com/analytics.js" async=""></script><script data-rocketoptimized="true" data-rocketsrc="https://pagead2.googlesyndication.com/pub-config/r20160212/ca-pub-3825904144659245.js"></script><script gapi_processed="true" data-rocketoptimized="true" data-rocketsrc="https://apis.google.com/js/plusone.js" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="http://pagead2.googlesyndication.com/pagead/osd.js"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"82dc239b00de261410b88405ef942b5a",petok:"d62bf212474a7fc5f2cf8575602057880729dbc3-1467971600-1800",zone:"elhacker.net",rocket:"a",apps:{},sha2test:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=e982913d31/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/cloudflare.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_11b3e419fd" onload="CloudFlare.__cfjs_block_11b3e419fd_load()" onerror="CloudFlare.__cfjs_block_11b3e419fd_error()" onreadystatechange="CloudFlare.__cfjs_block_11b3e419fd_readystatechange()" type="text/javascript" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/rocket.js"></script>
+<link rel="stylesheet" type="text/css" href="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/style.css"><script data-rocketoptimized="true" language="JavaScript" type="text/rocketscript" data-rocketsrc="http://foro.elhacker.net/Themes/converted/js/script.js"></script>
+<script data-rocketoptimized="true" language="JavaScript" type="text/rocketscript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://foro.elhacker.net/Themes/converted";
+		var smf_images_url = "http://foro.elhacker.net/Themes/converted/images";
+		var smf_scripturl = "http://foro.elhacker.net/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+<script data-rocketoptimized="true" type="text/rocketscript" language="JavaScript" data-rocketsrc="http://foro.elhacker.net/mobiquo/tapatalkdetect.js"></script><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<style type="text/css">a img{border:0;}</style>
+<script data-rocketoptimized="true" language="JavaScript" type="text/rocketscript"><!-- // --><![CDATA[
+		var smf_scripturl = "http://foro.elhacker.net/index.php";
+	// ]]></script>
+<script data-rocketoptimized="true" type="text/rocketscript">if(top.location != self.location)top.location = self.location;</script>
+<link rel="alternate" title="Noticias del Foro de elhacker.net" href="http://foro.elhacker.net/index.php?action=.xml;sa=news;board=34;limit=10;type=rss" type="application/rss+xml">
+ 
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="//partner.googleadservices.com/gampad/google_service.js"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		  GS_googleAddAdSenseService("ca-pub-6221719960574056");
+		  GS_googleEnableAllServices();
+	 </script><script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://partner.googleadservices.com/gampad/google_ads.js"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		  GA_googleAddSlot("ca-pub-6221719960574056", "foro_elhacker");
+	 </script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		  GA_googleFetchAds();
+	 </script>
+<link rel="icon" href="http://foro.elhacker.net/favicon.ico" type="image/x-icon">
+ 
+<meta name="tradetracker-site-verification" content="34354e7f78385990e0ac4346c460792152894eb4">
+</head>
+<body leftmargin="0" rightmargin="0" topmargin="0" marginheight="0" marginwidth="0" text="#005177">
+<a name="TOP"></a>
+<table class="bordercolor" align="CENTER" width="95%" bgcolor="#000000" border="0" cellpadding="0" cellspacing="1">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="windowbg2">
+<td align="center" height="60" valign="top" width="468"><a href="http://www.elhacker.net/" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/selogo.jpg" alt="elhacker.net" height="60" width="468" border="0"></a>
+</td>
+<td align="center" height="60" valign="top" width="68"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/der_logo.jpg" alt="cabecera" height="60" width="69"></td>
+<td align="center" valign="middle" width="100%"> <font style="font-family: Verdana; font-size: 12px;" size="2">
+Bienvenido(a), <b>Visitante</b>. Por favor <a href="http://foro.elhacker.net/login.html">Ingresar</a> o <a href="http://foro.elhacker.net/register.html"><u>Registrarse</u></a> <br>¿Perdiste tu <a href="http://foro.elhacker.net/activate.html">email de activación?</a>.
+</font> </td>
+</tr>
+</tbody></table> </td>
+</tr><tr class="windowbg2" align="center" valign="middle" bgcolor="#444444">
+<td class="catbg">
+<div class="nav">
+<ul class="artmenu">
+| <a href="http://foro.elhacker.net/index.php"> Foro</a> | <a href="http://www.elhacker.net/">Web</a> | <a href="http://blog.elhacker.net/">Blog</a> | <a href="http://wiki.elhacker.net/">Wiki</a> | <a href="http://foro.elhacker.net/help.html">Ayuda</a> | <a href="http://foro.elhacker.net/search.html">Buscar</a> | <a href="http://foro.elhacker.net/login.html">Ingresar</a> | <u><a href="http://foro.elhacker.net/register.html">Registrarse</a></u> |
+<font size="1"> 8 Julio 2016, 11:53 &nbsp;</font>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table><br>
+<table align="center" width="95%" bgcolor="#bcd1dc" border="0">
+<tbody><tr>
+<td style="height: 120px;" valign="top">
+<div style="position: absolute; right: 50px; z-index: 10;" class="publi_sponsor"><br> 
+<script data-rocketoptimized="true" type="text/rocketscript">
+GA_googleFillSlot("foro_elhacker");
+</script><script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="https://securepubads.g.doubleclick.net/gampad/ads?correlator=3060990933042650&amp;output=json_html&amp;callback=GA_googleSetAdContentsBySlotForSync&amp;impl=s&amp;ic=0&amp;eid=108809087&amp;client=ca-pub-6221719960574056&amp;slotname=foro_elhacker&amp;page_slots=foro_elhacker&amp;cookie_enabled=1&amp;url=http%3A%2F%2Fforo.elhacker.net%2Fejercicios%2Fejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html&amp;ref=http%3A%2F%2Fwww.google.es%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D3%26cad%3Drja%26uact%3D8%26ved%3D0ahUKEwiVjdD9y-PNAhWEOxoKHeJrDYMQFggpMAI%26url%3Dhttp%253A%252F%252Fforo.elhacker.net%252Fejercicios%252Fejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html%26usg%3DAFQjCNGiidsq2FuHsuf48-ZX27Vkc1WXOA&amp;lmt=1467971600&amp;dt=1467971602834&amp;cc=7&amp;biw=1905&amp;bih=906&amp;adk=1266683351&amp;adx=1855&amp;ady=130&amp;ifi=1&amp;oid=3&amp;u_tz=120&amp;u_his=1&amp;u_java=true&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1054&amp;u_aw=1920&amp;u_cd=24&amp;u_nplug=1&amp;u_nmime=40&amp;flash=0&amp;gads=v2&amp;ga_vid=923260954.1467971603&amp;ga_sid=1467971603&amp;ga_hid=465990638"></script><div id="google_ads_div_foro_elhacker_ad_wrapper">
+<div style="display:inline-block;" id="google_ads_div_foro_elhacker_ad_container">
+<ins style="width: 728px; height: 90px; display: inline-table; position: relative; border: 0px none;"><ins style="width: 728px; height: 90px; display: block; position: relative; border: 0px none;"><iframe style="border: 0px none; position: absolute; top: 0px; left: 0px;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_foro_elhacker" id="google_ads_iframe_foro_elhacker" frameborder="0" height="90" width="728"></iframe></ins></ins></div>
+</div><script data-rocketoptimized="true" type="text/rocketscript">GA_googleCreateDomIframe("google_ads_div_foro_elhacker_ad_container" ,"foro_elhacker");</script>
+</div><p>&nbsp;</p>
+</td></tr>
+</tbody></table>
+<br><table class="windowbg2" align="center" width="75%" border="0">
+<tbody><tr>
+<td><span class="smalltext"><b>Tema destacado</b>: <a href="http://foro.elhacker.net/seguridad/iquestusas_skype_protegete_de_los_skype_resolvers-t424959.0.html"> ¿Usas <b>Skype</b>? Protégete de los Skype Resolver<br></a></span></td>
+</tr>
+</tbody></table><br>
+ <table align="center" width="95%" bgcolor="#BCD1DC" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="1"> </td>
+<td align="center" width="100%"><br> <table align="center" width="95%" border="0" bordercolor="#000000" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td height="100%" valign="TOP" width="100%">
+<a name="top"></a>
+<a name="msg1100714"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td valign="bottom"><span class="nav"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/folder_open.gif" alt="+" border="0">&nbsp; <b><a href="http://foro.elhacker.net/index.php" class="nav">Foro de elhacker.net</a></b><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_side.gif" alt="|-" border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/folder_open.gif" alt="+" border="0">&nbsp; <b><a href="http://foro.elhacker.net/index.php#9" class="nav">Programación</a></b><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_side.gif" alt="|-" border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/folder_open.gif" alt="+" border="0">&nbsp; <b><a href="http://foro.elhacker.net/programacion_general-b18.0/" class="nav">Programación General</a></b><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_side.gif" alt="|-" border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/folder_open.gif" alt="+" border="0">&nbsp; <b><a href="http://foro.elhacker.net/ejercicios-b38.0/" class="nav">Ejercicios</a></b><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_main.gif" alt="| " border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/linktree_side.gif" alt="|-" border="0"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/folder_open.gif" alt="+" border="0">&nbsp; <b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html" class="nav">Ejercicios Recursivos en Java y sus Soluciones</a></b></span></td>
+<td class="smalltext" align="center"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 70px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/fastbutton.html" name="I0_1467971603337" id="I0_1467971603337" vspace="0" tabindex="0" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><script data-rocketoptimized="true" type="text/rocketscript">
+  window.___gcfg = {lang: "es"};
+
+  (function() {
+    var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+    po.src = "https://apis.google.com/js/plusone.js";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>0 Usuarios y 1 Visitante están viendo este tema.</td>
+<td class="smalltext" align="right" valign="bottom">
+<span class="nav"></span>
+</td>
+</tr>
+</tbody></table>
+<table class="tborder" style="margin-bottom: 1ex;" width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td class="catbg" align="left" height="35" width="100%">
+<table width="100%" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td>
+<b>Páginas:</b> [<b>1</b>] <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.10.html">2</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.20.html">3</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.30.html">4</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.40.html">5</a> <a href="#bot"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/go_down.gif" alt="Ir Abajo" align="top" border="0"></a>
+</td>
+<td style="font-size: smaller;" align="right"><a href="http://foro.elhacker.net/post.html;topic=231013.0;num_replies=46"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/reply.gif" alt="Respuesta" border="0"></a> <a href="http://foro.elhacker.net/printpage.html;topic=231013.0" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/print.gif" alt="Imprimir" border="0"></a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<table class="tborder" style="border-bottom: 0;" width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr class="titlebg">
+<td style="padding-left: 6px;" align="left" valign="middle" width="15%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/veryhot_post.gif" alt="" align="middle"> Autor
+</td>
+<td style="padding-left: 6px;" align="left" valign="middle" width="85%">
+Tema: Ejercicios Recursivos en Java y sus Soluciones &nbsp;(Leído 278,586 veces)
+</td>
+</tr>
+</tbody></table>
+<table class="bordercolor" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td style="padding: 1px 1px 0 1px;">
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg" style="background-color: #FFFFC8">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/ohk-u231746.html" title="Ver perfil de @ohk">@ohk</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 1.727<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/68zrfd.gif" alt="" class="avatar" border="0"></div><br>
+Yo lo que quiero que me salga bien es la vida.<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/ohk-u231746.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://www.32blitz.com/" rel="nofollow" title="32 Blitz" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1100714#msg1100714"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thumbup.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1100714#msg1100714">Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b> en:</b> 11 Octubre 2008, 03:19 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+<div align="center"><b><span style="font-size: 14pt; line-height: 1.3em;">Planteamiento del Ejercicio acompañado del algoritmo de resolución en Java</span></b></div><br><b>Planteamiento</b>:<br><br><b>Ejercicio 1</b>. Programar un algoritmo recursivo que calcule el factorial de un número.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> factorial<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> &nbsp; <span style="color: #666666; font-style: italic;">//AXIOMA</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> n<span style="color: #339933;">*</span>factorial<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #666666; font-style: italic;">//FORMULA RECURSIVA</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; <span style="color: #009900;">}</span> &nbsp;</div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 2</b>. Programar un algoritmo recursivo que calcule un número de la serie fibonacci.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> fibonaci<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">==</span><span style="color: #cc66cc;">1</span> <span style="color: #339933;">||</span> n<span style="color: #339933;">==</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> fibonaci<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">+</span>fibonaci<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span> &nbsp;</div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 3</b>. Programar un algoritmo recursivo que permita hacer la división por restas sucesivas.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> division <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> a, <span style="color: #000066; font-weight: bold;">int</span> b<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>b <span style="color: #339933;">&gt;</span> a<span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> division<span style="color: #009900;">(</span>a<span style="color: #339933;">-</span>b, b<span style="color: #009900;">)</span> <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 4</b>. Programar un algoritmo recursivo que permita invertir un número. <b>Ejemplo</b>: Entrada: <i>123 </i>Salida: <i>321</i><br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> invertir <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">)</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//caso base</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> n<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">%</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">)</span> <span style="color: #339933;">+</span> invertir <span style="color: #009900;">(</span>n <span style="color: #339933;">/</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">)</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">10</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 5</b>. Programar un algoritmo recursivo que permita sumar los dígitos de un número. <b>Ejemplo</b>: Entrada: <i>123 </i>Resultado:<i>6</i><br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> sumar_dig <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//caso base</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> n<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> sumar_dig <span style="color: #009900;">(</span>n <span style="color: #339933;">/</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">)</span> <span style="color: #339933;">+</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">%</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 6</b>. Programar un algoritmo recursivo que permita hacer una multiplicación, utilizando el método Ruso. Para mas informacion: <a rel="nofollow" href="http://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_por_duplicaci%C3%B3n" target="_blank">aqui</a>.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> mult_rusa<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> A, <span style="color: #000066; font-weight: bold;">int</span> B<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span> </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>A<span style="color: #339933;">==</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #009900;">(</span>B<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>A<span style="color: #339933;">%</span>2<span style="color: #339933;">!=</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">return</span><span style="color: #009900;">(</span>B<span style="color: #339933;">+</span>mult_rusa<span style="color: #009900;">(</span> A<span style="color: #339933;">/</span><span style="color: #cc66cc;">2</span> , B<span style="color: #339933;">*</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">return</span><span style="color: #009900;">(</span>mult_rusa<span style="color: #009900;">(</span> A<span style="color: #339933;">/</span><span style="color: #cc66cc;">2</span> , B<span style="color: #339933;">*</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 7</b>. Programar un algoritmo recursivo que permita sumar los elementos de un vector.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> suma_vec<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> v <span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> v <span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> suma_vec<span style="color: #009900;">(</span>v, n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span> <span style="color: #339933;">+</span> v <span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 8</b>. Programar un algoritmo recursivo que permita multiplicar los elementos de un vector.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> multiplicar <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> vec <span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> tam<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>tam <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #009900;">(</span>vec <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #009900;">(</span>vec <span style="color: #009900;">[</span>tam<span style="color: #009900;">]</span> <span style="color: #339933;">*</span> multiplicar <span style="color: #009900;">(</span>vec, tam <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 9</b>. Programar un algoritmo recursivo que calcule el Maximo comun divisor de dos números.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> sacar_mcd<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> a, <span style="color: #000066; font-weight: bold;">int</span> b<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>b<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> a<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> sacar_mcd<span style="color: #009900;">(</span>b, a <span style="color: #339933;">%</span> b<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 10</b>. Programar un algoritmo recursivo que determine si un número es positivo.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> positivo<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">&gt;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;	<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> negativo<span style="color: #009900;">(</span>n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> negativo<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">&lt;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;	<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> &nbsp;positivo<span style="color: #009900;">(</span>n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 11</b>. Programar un algoritmo recursivo que determine si un número es impar utilizando recursividad cruzada.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> par<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> impar<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> impar<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> par<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 12</b>. Programar un algoritmo recursivo que permita sumar los elementos de una matriz.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">int</span> suma <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> fila, <span style="color: #000066; font-weight: bold;">int</span> col, <span style="color: #000066; font-weight: bold;">int</span> orden, <span style="color: #000066; font-weight: bold;">int</span> mat <span style="color: #009900;">[</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>fila <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span> <span style="color: #339933;">&amp;&amp;</span> col <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">return</span> mat <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>col <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">return</span> suma <span style="color: #009900;">(</span>fila <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, orden, orden, mat<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">return</span> mat <span style="color: #009900;">[</span>fila<span style="color: #009900;">]</span> <span style="color: #009900;">[</span>col<span style="color: #009900;">]</span> <span style="color: #339933;">+</span> suma <span style="color: #009900;">(</span>fila, col <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, orden, mat<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 13</b>. Programar un algoritmo recursivo que permita resolver el cuadro latino. <b>Ejemplo de cuadro latino</b>:<br><br><b>0 0 0 0 1<br>0 0 0 1 2<br>0 0 1 2 3<br>0 1 2 3 4<br>1 2 3 4 5<br></b><br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; latino <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> fila, <span style="color: #000066; font-weight: bold;">int</span> col, <span style="color: #000066; font-weight: bold;">int</span> cont, <span style="color: #000066; font-weight: bold;">int</span> orden, <span style="color: #000066; font-weight: bold;">int</span> mat <span style="color: #009900;">[</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>fila <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span> <span style="color: #339933;">&amp;&amp;</span> col <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;mat <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>fila <span style="color: #339933;">==</span> col<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		latino <span style="color: #009900;">(</span>fila <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, orden <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, orden, orden, mat<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		mat <span style="color: #009900;">[</span>fila<span style="color: #009900;">]</span> <span style="color: #009900;">[</span>col<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> cont<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		latino <span style="color: #009900;">(</span>fila, col <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, orden <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span>, orden, mat<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 14</b>. Programar un algoritmo recursivo que permita resolver la siguiente matriz:<br><br><b>1 1 1 1 1<br>1 2 2 2 2<br>1 2 4 4 4<br>1 2 4 8 8<br>1 2 4 8 16</b><br><br><b>Solución</b>: <span style="color: green;">Solucionado por</span>: <b>AmeRiK@nO</b><br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> MatrizRecursividad <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span> a<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span>, aux<span style="color: #339933;">=</span><span style="color: #cc66cc;">1</span>, b<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Declaramos los datos necesarios</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> matriz <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #cc66cc;">6</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #cc66cc;">6</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//La matriz debe ser cuadrada</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">String</span></a><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		llenarMatriz<span style="color: #009900;">(</span>matriz, a, b<span style="color: #009900;">)</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Iniciamos el llamado recursivo</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		imprimir<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//imprimimos la matriz</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> llenarMatriz<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> matriz<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> i, <span style="color: #000066; font-weight: bold;">int</span> j<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>j <span style="color: #339933;">&gt;</span> matriz.<span style="color: #006633;">length</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//Si llegó a la ultima coluna, reseteamos los datos para la siguiente</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			i<span style="color: #339933;">++;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			j<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			aux<span style="color: #339933;">++;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i <span style="color: #339933;">&lt;</span>matriz.<span style="color: #006633;">length</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">// compara que no hallamos llegado al final</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #009900;">(</span>aux<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span> <span style="color: #339933;">&amp;&amp;</span> j <span style="color: #339933;">&gt;=</span> <span style="color: #009900;">(</span>aux<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//comprueba que estemos en el lugar adecuado, es decir ira imprimiento escaladamente</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>i<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">2</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">//ingresamos el valor correspondiente al ultimo de la "escala" *2</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				llenarMatriz<span style="color: #009900;">(</span>matriz, i , j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//si no, asignamos los valores anteriores de la escala</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>j<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// comprobamos si es el primer digito a ingresar</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">// asignamos el mismo numero de la fila anterior (i-1)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				llenarMatriz<span style="color: #009900;">(</span>matriz, i, j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> imprimir<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//este metodo nos imprime la matriz por consola</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> i<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i<span style="color: #339933;">&lt;</span> matriz.<span style="color: #006633;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> j<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> j<span style="color: #339933;">&lt;</span> matriz.<span style="color: #006633;">length</span><span style="color: #339933;">;</span> j<span style="color: #339933;">++</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">System</span></a>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">(</span>matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">+</span> <span style="color: #0000ff;">" "</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">System</span></a>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 15</b>. Programar un algoritmo recursivo que ejecute la matriz del cubo mágico.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">void</span> magico<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> mat <span style="color: #009900;">[</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> fil, <span style="color: #000066; font-weight: bold;">int</span> colmedio, <span style="color: #000066; font-weight: bold;">int</span> c, <span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">==</span> n <span style="color: #339933;">*</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;mat <span style="color: #009900;">[</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span> <span style="color: #009900;">[</span>colmedio<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> c<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>fil <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">0</span> <span style="color: #339933;">&amp;&amp;</span> colmedio <span style="color: #339933;">==</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">{</span>		</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		magico<span style="color: #009900;">(</span>mat, fil <span style="color: #339933;">+</span> <span style="color: #cc66cc;">2</span>, n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, c, n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>fil <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;magico<span style="color: #009900;">(</span>mat, n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, colmedio, c, n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>colmedio <span style="color: #339933;">==</span> n<span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			magico<span style="color: #009900;">(</span>mat, fil, <span style="color: #cc66cc;">0</span>, c, n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>mat <span style="color: #009900;">[</span>fil<span style="color: #009900;">]</span> <span style="color: #009900;">[</span>colmedio<span style="color: #009900;">]</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			 &nbsp; &nbsp;mat <span style="color: #009900;">[</span>fil<span style="color: #009900;">]</span> <span style="color: #009900;">[</span>colmedio<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> c<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			 &nbsp; &nbsp;magico<span style="color: #009900;">(</span>mat, fil <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, colmedio <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span>, c <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span>, n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			 &nbsp; &nbsp;magico<span style="color: #009900;">(</span>mat, fil <span style="color: #339933;">+</span> <span style="color: #cc66cc;">2</span>, colmedio <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, c, n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		 &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	 &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 16</b>. Programar un algoritmo recursivo que muestre el numero menor de un vector.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> menorvec <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> x <span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> n, <span style="color: #000066; font-weight: bold;">int</span> menor<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>menor <span style="color: #339933;">&gt;</span> x <span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> x <span style="color: #009900;">[</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> menor<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>menor <span style="color: #339933;">&gt;</span> x <span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> menorvec <span style="color: #009900;">(</span>x, n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, x <span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> menorvec <span style="color: #009900;">(</span>x, n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span>, menor<span style="color: #009900;">)</span><span style="color: #339933;">;</span> <span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 17</b>. Programar un algoritmo recursivo que muestre el numero mayor de un vector.<br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> mayor <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> numeros <span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> posicion<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">int</span> aux<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>posicion <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> numeros <span style="color: #009900;">[</span>posicion<span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aux <span style="color: #339933;">=</span> mayor <span style="color: #009900;">(</span>numeros, posicion <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>numeros <span style="color: #009900;">[</span>posicion<span style="color: #009900;">]</span> <span style="color: #339933;">&gt;</span> aux<span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> numeros <span style="color: #009900;">[</span>posicion<span style="color: #009900;">]</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">return</span> mayor <span style="color: #009900;">(</span>numeros, posicion <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">}</span> &nbsp; &nbsp; </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">}</span></div></li></ol></pre><br><hr><br><div class="quoteheader">Citar</div><div class="quote"><span style="font-size: 15pt; line-height: 1.3em;">Recursividad</span><br><br>1.1. <b>Introducción</b>.<br><br>El
+ concepto de recursividad va ligado al de repetición. Son recursivos 
+aquellos algoritmos que, estando encapsulados dentro de una función, son
+ llamados desde ella misma una y otra vez, en contraposición a los 
+algoritmos iterativos, que hacen uso de bucles while, do-while, for, 
+etc.<br><br>1.2. <b>Definición</b>.<br><br>Algo es recursivo si se 
+define en términos de sí mismo (cuando para definirse hace mención a sí 
+mismo). Para que una definición recursiva sea válida, la referencia a sí
+ misma debe ser relativamente más sencilla que el caso considerado.<br>1.3. Elementos de la Recursión <br><br>1.3. 1. <b>Axioma </b><br><br>Es
+ un caso donde el problema puede resolverse sin tener que hacer uso de 
+una nueva llamada a sí mismo. Evita la continuación indefinida de las 
+partes recursivas.<br><br>1.3.2. <b>Formula recursiva</b><br><br>Relaciona
+ el resultado del algoritmo con resultados de casos más simples. Se 
+hacen nuevas llamadas a la función, pero están más próximas al caso 
+base.<br>Por ejemplo: <b>El factorial de un número</b><br><br>factorial(0) &nbsp; -&gt; &nbsp;1<br>factorial(1) &nbsp; -&gt; &nbsp;1*factorial(0)<br>factorial(2) &nbsp; -&gt; &nbsp;2*factorial(1)<br>factorial(3) &nbsp; -&gt; &nbsp;3*factorial (2)<br>… &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt; &nbsp;…<br>factorial(N) &nbsp; -&gt; &nbsp;3*factorial (N-1)<br><br>En la resolución de algoritmos recursivos es imprescindible encontrar estos dos elementos.<br><br>1.4. <b>Tipos de recursión</b><br><br>1.4.1. <b>Recursividad simple</b><br><br>Aquella en cuya definición sólo aparece una llamada recursiva. Se puede transformar con facilidad en algoritmos iterativos.<br><br>1.4.2. <b>Recursividad múltiple</b><br>Se
+ da cuando hay más de una llamada a sí misma dentro del cuerpo de la 
+función, resultando más difícil de hacer de forma iterativa. Un ejemplo 
+típico es la función de fibonacci<br>&nbsp;<br>1.4.3. <b>Recursividad anidada</b><br>En
+ algunos de los argumentos de la llamada recursiva hay una nueva llamada
+ a sí misma. La función de Ackermann se define por recursividad como 
+sigue:<br><br>1.4.4. <b>Recursividad cruzada o indirecta</b><br>Son algoritmos donde una función provoca una llamada a sí misma de forma indirecta, a través de otras funciones.<br></div><br><b>OHK</b></div><br><br><script data-rocketoptimized="true" async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3825904144659245" data-ad-slot="9405434100"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+« <i>Última modificación: 15 Marzo 2011, 23:52 por ohk</i> »
+</td>
+<td class="smalltext" align="right" valign="bottom"><div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 70px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/fastbutton_002.html" name="I1_1467971603342" id="I1_1467971603342" vspace="0" tabindex="0" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table> 
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature">Y es que a veces pienso que si no estuviera loco no podría salir adelante.<br>Lo que no se es capaz de dar, en realidad no se posee, uno es poseído por ello.</div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1100720"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg2" style="background-color: #FFFFC8">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/ohk-u231746.html" title="Ver perfil de @ohk">@ohk</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 1.727<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/68zrfd.gif" alt="" class="avatar" border="0"></div><br>
+Yo lo que quiero que me salga bien es la vida.<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/ohk-u231746.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://www.32blitz.com/" rel="nofollow" title="32 Blitz" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1100720#msg1100720"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1100720#msg1100720">Re: Ejercicios Revursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #1 en:</b> 11 Octubre 2008, 03:47 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+Alguien se anima a resolver el <b>ejercicio 14 </b>?<br><br><b>OHK</b></div><br><br><script data-rocketoptimized="true" async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3825904144659245" data-ad-slot="2360892926"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+« <i>Última modificación: 12 Octubre 2008, 05:53 por ohk</i> »
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature">Y es que a veces pienso que si no estuviera loco no podría salir adelante.<br>Lo que no se es capaz de dar, en realidad no se posee, uno es poseído por ello.</div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1121250"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html" title="Ver perfil de Amerikano|Cls">Amerikano|Cls</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 789<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/gaarasimpsonbytetragyom.html" alt="" class="avatar" border="0"></div><br>
+[Beyond This Life]<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://amerikanocls.blogspot.com/" rel="nofollow" title=":AmeRiK@nO Blog:" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1121250#msg1121250"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1121250#msg1121250">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #2 en:</b> 13 Noviembre 2008, 02:17 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+lo intentare hacer pero necesito tiempo, por que ando ocupado.<br><br>amerikano</div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"><div align="center"><span style="font-size: 25pt; line-height: 1.3em;"><b><span style="color: red;">&#12450;</span>&#12513;<span style="color: red;">&#12522;</span>&#12459;<span style="color: red;">&#12494;</span></b></span><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1280971cls.jpg" alt="" border="0"><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1580547javaprogrammer.html" alt="" border="0"><br><br><b>Mi blog:</b><br><a rel="nofollow" href="http://amerikanocls.blogspot.com/" target="_blank">http://amerikanocls.blogspot.com</a></div></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1130130"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg2">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html" title="Ver perfil de Amerikano|Cls">Amerikano|Cls</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 789<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/gaarasimpsonbytetragyom.html" alt="" class="avatar" border="0"></div><br>
+[Beyond This Life]<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://amerikanocls.blogspot.com/" rel="nofollow" title=":AmeRiK@nO Blog:" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1130130#msg1130130"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1130130#msg1130130">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #3 en:</b> 27 Noviembre 2008, 22:30 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+Oye una recomendación, el de fibonnaci no es conveniente hacerlo por 
+recursividad, por lo siguiente, y es que las llamadas recursivas se 
+dividen en dos lo cual conlleva a repetir un mismo proceso mas de dos 
+veces y eso le resta velocidad y eficiencia&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xd.gif" alt=":xD" border="0"> era solo eso jeje.<br><br>salu2</div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"><div align="center"><span style="font-size: 25pt; line-height: 1.3em;"><b><span style="color: red;">&#12450;</span>&#12513;<span style="color: red;">&#12522;</span>&#12459;<span style="color: red;">&#12494;</span></b></span><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1280971cls.jpg" alt="" border="0"><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1580547javaprogrammer.html" alt="" border="0"><br><br><b>Mi blog:</b><br><a rel="nofollow" href="http://amerikanocls.blogspot.com/" target="_blank">http://amerikanocls.blogspot.com</a></div></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1134112"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html" title="Ver perfil de Amerikano|Cls">Amerikano|Cls</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 789<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/gaarasimpsonbytetragyom.html" alt="" class="avatar" border="0"></div><br>
+[Beyond This Life]<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://amerikanocls.blogspot.com/" rel="nofollow" title=":AmeRiK@nO Blog:" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134112#msg1134112"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134112#msg1134112">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #4 en:</b> 4 Diciembre 2008, 18:38 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+<div class="quoteheader"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1100714#msg1100714">Cita de: ohk en 11 Octubre 2008, 03:19 </a></div><div class="quote"><hr><br><b>Planteamiento</b>:<br><br><b>Ejercicio 14</b>. Programar un algoritmo recursivo que permita resolver la siguiente matriz:<br><br><b>1 1 1 1 1<br>1 2 2 2 2<br>1 2 4 4 4<br>1 2 4 8 8<br>1 2 4 8 16</b><br><br><b>Solución</b>:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">No solucionado...</div></li></ol></pre><br></div><br>Bueno yo ya solucione el numero 14 jeje estaba facilito solo que no tenia tiempo de hacerlo, aca va:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> MatrizRecursividad <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span> a<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span>, aux<span style="color: #339933;">=</span><span style="color: #cc66cc;">1</span>, b<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Declaramos los datos necesarios</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> matriz <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #cc66cc;">6</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #cc66cc;">6</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//La matriz debe ser cuadrada</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">String</span></a><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		llenarMatriz<span style="color: #009900;">(</span>matriz, a, b<span style="color: #009900;">)</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Iniciamos el llamado recursivo</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		imprimir<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//imprimimos la matriz</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> llenarMatriz<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> matriz<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span>, <span style="color: #000066; font-weight: bold;">int</span> i, <span style="color: #000066; font-weight: bold;">int</span> j<span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>j <span style="color: #339933;">&gt;</span> matriz.<span style="color: #006633;">length</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//Si llegó a la ultima coluna, reseteamos los datos para la siguiente</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			i<span style="color: #339933;">++;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			j<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			aux<span style="color: #339933;">++;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i <span style="color: #339933;">&lt;</span>matriz.<span style="color: #006633;">length</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">// compara que no hallamos llegado al final</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #009900;">(</span>aux<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span> <span style="color: #339933;">&amp;&amp;</span> j <span style="color: #339933;">&gt;=</span> <span style="color: #009900;">(</span>aux<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//comprueba que estemos en el lugar adecuado, es decir ira imprimiento escaladamente</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>i<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">2</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">//ingresamos el valor correspondiente al ultimo de la "escala" *2</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				llenarMatriz<span style="color: #009900;">(</span>matriz, i , j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//si no, asignamos los valores anteriores de la escala</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>j<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// comprobamos si es el primer digito a ingresar</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000000; font-weight: bold;">else</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">// asignamos el mismo numero de la fila anterior (i-1)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				llenarMatriz<span style="color: #009900;">(</span>matriz, i, j<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> imprimir<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span> <span style="color: #666666; font-style: italic;">//este metodo nos imprime la matriz por consola</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> i<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i<span style="color: #339933;">&lt;</span> matriz.<span style="color: #006633;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> j<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> j<span style="color: #339933;">&lt;</span> matriz.<span style="color: #006633;">length</span><span style="color: #339933;">;</span> j<span style="color: #339933;">++</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">System</span></a>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">(</span>matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">+</span> <span style="color: #0000ff;">" "</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<a rel="nofollow" href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">System</span></a>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">}</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li></ol></pre><br>Bueno cualquier duda comenten que pa eso estoy&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xd.gif" alt=":xD" border="0">.<br><br>salu2<br><br>amerikano</div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"><div align="center"><span style="font-size: 25pt; line-height: 1.3em;"><b><span style="color: red;">&#12450;</span>&#12513;<span style="color: red;">&#12522;</span>&#12459;<span style="color: red;">&#12494;</span></b></span><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1280971cls.jpg" alt="" border="0"><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1580547javaprogrammer.html" alt="" border="0"><br><br><b>Mi blog:</b><br><a rel="nofollow" href="http://amerikanocls.blogspot.com/" target="_blank">http://amerikanocls.blogspot.com</a></div></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1134180"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg2" style="background-color: #FFFFC8">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/ohk-u231746.html" title="Ver perfil de @ohk">@ohk</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 1.727<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/68zrfd.gif" alt="" class="avatar" border="0"></div><br>
+Yo lo que quiero que me salga bien es la vida.<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/ohk-u231746.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://www.32blitz.com/" rel="nofollow" title="32 Blitz" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134180#msg1134180"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134180#msg1134180">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #5 en:</b> 4 Diciembre 2008, 20:19 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+@<b>AmeRiK@nO</b>, tu ejercicio corre perfectamente, y el codigo no es dificil de interpretar, porque haces codigo limpio.<br><br>Ahora mismo lo agrego tu ejercicio a el espacio que falta.<br>Gracias por el aporte<br>Un saludo </div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature">Y es que a veces pienso que si no estuviera loco no podría salir adelante.<br>Lo que no se es capaz de dar, en realidad no se posee, uno es poseído por ello.</div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1134390"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html" title="Ver perfil de Amerikano|Cls">Amerikano|Cls</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 789<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/gaarasimpsonbytetragyom.html" alt="" class="avatar" border="0"></div><br>
+[Beyond This Life]<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://amerikanocls.blogspot.com/" rel="nofollow" title=":AmeRiK@nO Blog:" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134390#msg1134390"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134390#msg1134390">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #6 en:</b> 5 Diciembre 2008, 01:49 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+jeje debes corregir esto:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li></ol></pre><br>Vez, lo puse dos veces sin querer, ahora pon solo uno:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li></ol></pre><br>Se me coló uno sin darme cuenta&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/grin.gif" alt=";D" border="0">, pero así y todo funcionó&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/smiley.gif" alt=":)" border="0">, solo era eso.<br><br>salu2</div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"><div align="center"><span style="font-size: 25pt; line-height: 1.3em;"><b><span style="color: red;">&#12450;</span>&#12513;<span style="color: red;">&#12522;</span>&#12459;<span style="color: red;">&#12494;</span></b></span><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1280971cls.jpg" alt="" border="0"><br><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/thump_1580547javaprogrammer.html" alt="" border="0"><br><br><b>Mi blog:</b><br><a rel="nofollow" href="http://amerikanocls.blogspot.com/" target="_blank">http://amerikanocls.blogspot.com</a></div></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1134424"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg2" style="background-color: #FFFFC8">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/ohk-u231746.html" title="Ver perfil de @ohk">@ohk</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 1.727<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/68zrfd.gif" alt="" class="avatar" border="0"></div><br>
+Yo lo que quiero que me salga bien es la vida.<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/ohk-u231746.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+<a href="http://www.32blitz.com/" rel="nofollow" title="32 Blitz" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/www_sm.gif" alt="WWW" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134424#msg1134424"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134424#msg1134424">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #7 en:</b> 5 Diciembre 2008, 03:18 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+<div class="quoteheader"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1134390#msg1134390">Cita de: AmeRiK@nO en &nbsp;5 Diciembre 2008, 01:49 </a></div><div class="quote">jeje debes corregir esto:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span><span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li></ol></pre><br>Vez, lo puse dos veces sin querer, ahora pon solo uno:<br><br><div class="codeheader">Código</div><pre class="java geshi" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>i<span style="color: #339933;">==</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #666666; font-style: italic;">// si es la primera fila ingresamos aux=1</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">matriz<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">[</span>j<span style="color: #009900;">]</span> <span style="color: #339933;">=</span>aux<span style="color: #339933;">;</span></div></li></ol></pre><br>Se me coló uno sin darme cuenta&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/grin.gif" alt=";D" border="0">, pero así y todo funcionó&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/smiley.gif" alt=":)" border="0">, solo era eso.<br><br>salu2<br></div><br>&nbsp;<img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xd.gif" alt=":xD" border="0"><br><br>Da igual, ademas quien lo use se dara cuenta&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/rolleyes.gif" alt=":rolleyes:" border="0"></div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature">Y es que a veces pienso que si no estuviera loco no podría salir adelante.<br>Lo que no se es capaz de dar, en realidad no se posee, uno es poseído por ello.</div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1135465"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/juancho77-u245088.html" title="Ver perfil de juancho77">juancho77</a></b>
+<div class="smalltext">
+<br>
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 455<br>
+<br>
+<div style="overflow: auto; width: 100%;"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/INDEPENDIENTE.html" alt="" class="avatar" border="0"></div><br>
+rie con demencia<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/juancho77-u245088.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1135465#msg1135465"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1135465#msg1135465">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #8 en:</b> 7 Diciembre 2008, 01:35 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+De todos modos no tiene error, ni sintactico ni semantico.&nbsp; <img style="display: inline;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/tongue.gif" alt=":P" border="0"></div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"><b><a rel="nofollow" href="http://theradiolin.wordpress.com/2009/08/04/observaciones-y-el-pensamiento-no-lineal/" target="_blank">think nonlinearly</a></b><br><br><a rel="nofollow" href="http://bux.to/register.php?r=juancho_viedma" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/banner.png" alt="" border="0"></a></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 1px 1px 0 1px;">
+<a name="msg1250507"></a>
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr><td class="windowbg2">
+<table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+<b><a href="http://foro.elhacker.net/profiles/pixzeto-u352083.html" title="Ver perfil de pixzeto">pixzeto</a></b>
+<div class="smalltext">
+<br>
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/useroff.gif" alt="Desconectado" align="middle" border="0"><span class="smalltext"> Desconectado</span><br><br>
+Mensajes: 1<br>
+<br>
+<br>
+<a href="http://foro.elhacker.net/profiles/pixzeto-u352083.html"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/profile_sm.gif" alt="Ver Perfil" title="Ver Perfil" border="0"></a>
+</div>
+</td>
+<td height="100%" valign="top" width="85%">
+<table width="100%" border="0"><tbody><tr>
+<td align="left" valign="middle"><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1250507#msg1250507"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="" border="0"></a></td>
+<td align="left" valign="middle">
+<b><a href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.0.html;msg1250507#msg1250507">Re: Ejercicios Recursivos en Java y sus Soluciones</a></b>
+<div class="smalltext">« <b>Respuesta #9 en:</b> 11 Junio 2009, 02:03 »</div></td>
+<td style="font-size: smaller;" align="right" height="20" nowrap="nowrap" valign="bottom">
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div class="post" style="overflow: auto; width: 100%;">
+Estuve practicando con estos ejercicios y parece que el método para invertir un número no funciona bien.<br><br>Por ejemplo, si le entregamos el 32, daría:<br>&nbsp;2 + invertir(3)*10&nbsp; =&nbsp; 2 + 3*10&nbsp; =&nbsp; 32<br><br><div class="codeheader">Código:</div><div class="code"><pre style="margin-top: 0; display: inline;">&nbsp; &nbsp; &nbsp;int invertir (int n)<br>&nbsp; &nbsp; {<br>	if (n &lt; 10)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//caso base<br>	&nbsp; &nbsp; return n;<br>	else<br>	&nbsp; &nbsp; return (n % 10) + invertir (n / 10) * 10;<br>&nbsp; &nbsp; }</pre></div><br><br>Pero lo hice así y funciona:<br><div class="codeheader">Código:</div><div class="code"><pre style="margin-top: 0; display: inline;">public int invertirNumero(int numero){<br>		if(numero&lt;10){<br>			return numero;<br>		}else{<br>			int contador = 0;<br>			int aux = numero;<br>			while(aux/10!=0){<br>				contador++;<br>				aux = aux/10;<br>			}<br>			return (int)(Math.pow(10, contador))*(numero%10) + this.invertirNumero(numero/10);<br>		}<br>	}</pre></div></div>
+</td>
+</tr>
+<tr>
+<td class="smalltext" valign="bottom" width="85%">
+<table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+<td colspan="2" class="smalltext" align="left" width="100%">
+</td>
+</tr><tr>
+<td class="smalltext" align="left" valign="bottom">
+</td>
+<td class="smalltext" align="right" valign="bottom">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/ip.gif" alt="" border="0">
+En línea
+</td>
+</tr></tbody></table>
+<hr class="hrcolor" size="1" width="100%">
+<div style="overflow: auto; width: 100%; padding-bottom: 3px;" class="signature"></div>
+</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</tbody></table>
+<a name="lastPost"></a>
+<table class="tborder" style="margin-top: 1ex;" width="100%" border="0" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td class="catbg" align="left" height="30" width="100%">
+<table width="100%" cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td>
+<a name="bot"></a><b>Páginas:</b> [<b>1</b>] <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.10.html">2</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.20.html">3</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.30.html">4</a> <a class="navPages" href="http://foro.elhacker.net/ejercicios/ejercicios_recursivos_en_java_y_sus_soluciones-t231013.40.html">5</a> <a href="#top"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/go_up.gif" alt="Ir Arriba" align="top" border="0"></a>
+</td>
+<td style="font-size: smaller;" align="right"><a href="http://foro.elhacker.net/post.html;topic=231013.0;num_replies=46"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/reply.gif" alt="Respuesta" border="0"></a> <a href="http://foro.elhacker.net/printpage.html;topic=231013.0" target="_blank"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/print.gif" alt="Imprimir" border="0"></a>&nbsp;
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<script data-rocketoptimized="true" language="JavaScript1.2" type="text/rocketscript"><!--
+	var currentSwap = true
+
+	function doQuote(messageid)
+	{
+		if (currentSwap)
+			window.location.href = "http://foro.elhacker.net/post.html;quote=" + messageid + ";topic=231013.0;sesc=39f7ff5bf8cf9cbeabb3fefe7ff60cc4";
+		else
+		{
+			window.open("http://foro.elhacker.net/quotefast.html;quote=" + messageid + ";sesc=39f7ff5bf8cf9cbeabb3fefe7ff60cc4", "quote", "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,top=40,left=40,width=240,height=90,resizable=no;");
+			if (navigator.appName == "Microsoft Internet Explorer")
+				window.location.hash = "quickreply";
+			else
+				window.location.hash = "#quickreply";
+		}
+	}
+// --></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="smalltext" align="right" valign="top"> <span class="nav"> </span></td>
+</tr>
+</tbody></table>
+<table style="margin-left: 1ex;" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td></td>
+</tr>
+</tbody></table><br>
+<div style="margin-bottom: 1ex;" align="right">
+<form action="http://foro.elhacker.net/index.php" method="get" name="jumptoForm">
+<span class="smalltext">Ir a:</span>
+<select name="jumpto" onchange="if (this.options[this.selectedIndex].value) window.location.href='http://foro.elhacker.net/index.php' + this.options[this.selectedIndex].value;">
+<option value="">Por favor selecciona un destino:</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#1">Foros Generales</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=2.0"> =&gt; Dudas Generales</option>
+<option value="?board=10.0"> =&gt; Sugerencias y dudas sobre el Foro</option>
+<option value="?board=22.0"> =&gt; Foro Libre</option>
+<option value="?board=34.0"> ===&gt; Noticias</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#2">Seguridad Informática</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=23.0"> =&gt; Seguridad</option>
+<option value="?board=56.0"> ===&gt; Criptografía</option>
+<option value="?board=27.0"> ===&gt; Desafíos - Wargames</option>
+<option value="?board=81.0"> =====&gt; WarZone</option>
+<option value="?board=44.0"> =&gt; Hacking Avanzado</option>
+<option value="?board=47.0"> ===&gt; Hacking Linux/Unix</option>
+<option value="?board=5.0"> ===&gt; Hacking Básico</option>
+<option value="?board=48.0"> =&gt; Hacking Wireless</option>
+<option value="?board=76.0"> ===&gt; Wireless en Windows</option>
+<option value="?board=77.0"> ===&gt; Wireless en Linux</option>
+<option value="?board=78.0"> ===&gt; Materiales y equipos</option>
+<option value="?board=32.0"> =&gt; Bugs y Exploits</option>
+<option value="?board=83.0"> ===&gt; Nivel Web</option>
+<option value="?board=17.0"> =&gt; Análisis y Diseño de Malware</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#9">Programación</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=7.0"> =&gt; Desarrollo Web</option>
+<option value="?board=68.0"> ===&gt; PHP</option>
+<option value="?board=88.0"> ===&gt; Bases de Datos</option>
+<option value="?board=18.0"> =&gt; Programación General</option>
+<option value="?board=38.0" selected="selected"> ===&gt; Ejercicios</option>
+<option value="?board=70.0"> ===&gt; Java</option>
+<option value="?board=84.0"> ===&gt; ASM</option>
+<option value="?board=62.0"> ===&gt; .NET</option>
+<option value="?board=64.0"> =&gt; Scripting</option>
+<option value="?board=26.0"> =&gt; Ingeniería Inversa</option>
+<option value="?board=49.0"> =&gt; Programación C/C++</option>
+<option value="?board=50.0"> =&gt; Programación Visual Basic</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#4">Sistemas Operativos</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=8.0"> =&gt; Windows</option>
+<option value="?board=9.0"> =&gt; GNU/Linux</option>
+<option value="?board=94.0"> ===&gt; Unix/Unix-Like</option>
+<option value="?board=36.0"> =====&gt; Mac OS X</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#6">Informática</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=30.0"> =&gt; Diseño Gráfico</option>
+<option value="?board=39.0"> ===&gt; Fotografía</option>
+<option value="?board=61.0"> ===&gt; Battle Arts</option>
+<option value="?board=75.0"> ===&gt; Galería de Arte</option>
+<option value="?board=3.0"> =&gt; Multimedia</option>
+<option value="?board=12.0"> ===&gt; Grabadoras</option>
+<option value="?board=14.0"> =&gt; Hardware</option>
+<option value="?board=89.0"> ===&gt; Overclocking y Refrigeración</option>
+<option value="?board=31.0"> =&gt; Electrónica</option>
+<option value="?board=19.0"> =&gt; Juegos y Consolas</option>
+<option value="?board=15.0"> =&gt; Tutoriales - Documentación</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="#10">Comunicaciones</option>
+<option value="" disabled="disabled">-----------------------------</option>
+<option value="?board=4.0"> =&gt; Redes</option>
+<option value="?board=37.0"> =&gt; Dispositivos Móviles (PDA's, Smartphones, Tablets)</option>
+<option value="?board=51.0"> ===&gt; Hacking Mobile</option>
+<option value="?board=87.0"> ===&gt; GPS-Navegadores</option>
+<option value="?board=93.0"> ===&gt; Android</option>
+<option value="?board=11.0"> =&gt; Chats; IRC y Messengers</option>
+</select>&nbsp;
+<input value="ir" onclick="if (document.jumptoForm.jumpto.options[document.jumptoForm.jumpto.selectedIndex].value) window.location.href = 'http://foro.elhacker.net/index.php' + document.jumptoForm.jumpto.options[document.jumptoForm.jumpto.selectedIndex].value;" type="button">
+</form>
+</div>
+<br>
+<div class="tborder">
+<table class="bordercolor" width="100%" border="0" cellpadding="4" cellspacing="1">
+<tbody><tr class="titlebg">
+<td colspan="7">Mensajes similares</td>
+</tr>
+<tr>
+<td colspan="2" class="catbg3" width="9%"></td>
+<td class="catbg3">Asunto</td>
+<td class="catbg3">Iniciado por</td>
+<td class="catbg3">Respuestas</td>
+<td class="catbg3">Vistas</td>
+<td class="catbg3">Último mensaje</td>
+</tr>
+<tr>
+<td class="windowbg2" align="center" valign="middle" width="5%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/normal_post_locked_sticky.gif" alt="">
+</td>
+<td class="windowbg2" align="center" valign="middle" width="4%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="">
+</td>
+<td class="windowbg" valign="middle">
+<b><span id="msg_170514"><a href="http://foro.elhacker.net/ejercicios/soluciones_ejercicios_c-t35174.0.html">Soluciones ejercicios C</a></span></b>
+<small id="pages170514">« <a href="http://foro.elhacker.net/ejercicios/soluciones_ejercicios_c-t35174.0.html">1</a> <a href="http://foro.elhacker.net/ejercicios/soluciones_ejercicios_c-t35174.10.html">2</a> »</small><br>
+<small><a href="http://foro.elhacker.net/ejercicios-b38.0/">Ejercicios</a></small>
+</td>
+<td class="windowbg2" valign="middle" width="14%">
+<a href="http://foro.elhacker.net/profiles/cobac-u2133.html" title="Ver perfil de Cobac">Cobac</a>
+</td>
+<td class="windowbg3" align="center" valign="middle" width="4%">
+13
+</td>
+<td class="windowbg3" align="center" valign="middle" width="4%">
+39,512
+</td>
+<td class="windowbg2" valign="middle" width="22%">
+<a href="http://foro.elhacker.net/ejercicios/soluciones_ejercicios_c-t35174.0.html;msg376323#new"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/last_post.gif" alt="Último mensaje" title="Último mensaje" style="float: right;"></a>
+<span class="smalltext">
+7 Agosto 2005, 21:55 <br>
+por <a href="http://foro.elhacker.net/profiles/cobac-u2133.html">Cobac</a>
+</span>
+</td>
+</tr>
+<tr>
+<td class="windowbg2" align="center" valign="middle" width="5%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/normal_post.gif" alt="">
+</td>
+<td class="windowbg2" align="center" valign="middle" width="4%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="">
+</td>
+<td class="windowbg" valign="middle">
+<span id="msg_173962"><a href="http://foro.elhacker.net/ejercicios/soplo_pon_las_soluciones_a_los_ejercicios_de_vb_pliss-t35899.0.html">soplo pon las soluciones a los ejercicios de VB pliss</a></span>
+<small id="pages173962"></small><br>
+<small><a href="http://foro.elhacker.net/ejercicios-b38.0/">Ejercicios</a></small>
+</td>
+<td class="windowbg2" valign="middle" width="14%">
+<a href="http://foro.elhacker.net/profiles/nitror-u18275.html" title="Ver perfil de Codename!!">Codename!!</a>
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+4
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+3,714
+</td>
+<td class="windowbg2" valign="middle" width="22%">
+<a href="http://foro.elhacker.net/ejercicios/soplo_pon_las_soluciones_a_los_ejercicios_de_vb_pliss-t35899.0.html;msg174737#new"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/last_post.gif" alt="Último mensaje" title="Último mensaje" style="float: right;"></a>
+<span class="smalltext">
+18 Julio 2004, 08:31 <br>
+por <a href="http://foro.elhacker.net/profiles/nitror-u18275.html">Codename!!</a>
+</span>
+</td>
+</tr>
+<tr>
+<td class="windowbg2" align="center" valign="middle" width="5%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/normal_post.gif" alt="">
+</td>
+<td class="windowbg2" align="center" valign="middle" width="4%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="">
+</td>
+<td class="windowbg" valign="middle">
+<span id="msg_1162878"><a href="http://foro.elhacker.net/ejercicios/ejercicios_java-t242322.0.html">Ejercicios Java</a></span>
+<small id="pages1162878"></small><br>
+<small><a href="http://foro.elhacker.net/ejercicios-b38.0/">Ejercicios</a></small>
+</td>
+<td class="windowbg2" valign="middle" width="14%">
+<a href="http://foro.elhacker.net/profiles/lorena88-u333917.html" title="Ver perfil de Lorena88">Lorena88</a>
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+1
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+4,415
+</td>
+<td class="windowbg2" valign="middle" width="22%">
+<a href="http://foro.elhacker.net/ejercicios/ejercicios_java-t242322.0.html;msg1163378#new"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/last_post.gif" alt="Último mensaje" title="Último mensaje" style="float: right;"></a>
+<span class="smalltext">
+21 Enero 2009, 01:42 <br>
+por <a href="http://foro.elhacker.net/profiles/kingcrack-u232618.html">Amerikano|Cls</a>
+</span>
+</td>
+</tr>
+<tr>
+<td class="windowbg2" align="center" valign="middle" width="5%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/veryhot_post.gif" alt="">
+</td>
+<td class="windowbg2" align="center" valign="middle" width="4%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="">
+</td>
+<td class="windowbg" valign="middle">
+<span id="msg_1607174"><a href="http://foro.elhacker.net/java/ejercicios_soluciones_en_java-t325701.0.html">ejercicios + soluciones en java</a></span>
+<small id="pages1607174">« <a href="http://foro.elhacker.net/java/ejercicios_soluciones_en_java-t325701.0.html">1</a> <a href="http://foro.elhacker.net/java/ejercicios_soluciones_en_java-t325701.10.html">2</a> <a href="http://foro.elhacker.net/java/ejercicios_soluciones_en_java-t325701.20.html">3</a> »</small><br>
+<small><a href="http://foro.elhacker.net/java-b70.0/">Java</a></small>
+</td>
+<td class="windowbg2" valign="middle" width="14%">
+<a href="http://foro.elhacker.net/profiles/bengy-u416745.html" title="Ver perfil de DeviiAC">DeviiAC</a>
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+25
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+12,224
+</td>
+<td class="windowbg2" valign="middle" width="22%">
+<a href="http://foro.elhacker.net/java/ejercicios_soluciones_en_java-t325701.0.html;msg1663243#new"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/last_post.gif" alt="Último mensaje" title="Último mensaje" style="float: right;"></a>
+<span class="smalltext">
+14 Septiembre 2011, 19:01 <br>
+por <a href="http://foro.elhacker.net/profiles/bengy-u416745.html">DeviiAC</a>
+</span>
+</td>
+</tr>
+<tr>
+<td class="windowbg2" align="center" valign="middle" width="5%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/normal_post.gif" alt="">
+</td>
+<td class="windowbg2" align="center" valign="middle" width="4%">
+<img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/xx.gif" alt="">
+</td>
+<td class="windowbg" valign="middle">
+<span id="msg_1779227"><a href="http://foro.elhacker.net/java/regalo_para_los_que_empiezar_a_programar_triangulos_recursivos-t370095.0.html">Regalo para los que empiezar a programar (triangulos recursivos):</a></span>
+<small id="pages1779227"></small><br>
+<small><a href="http://foro.elhacker.net/java-b70.0/">Java</a></small>
+</td>
+<td class="windowbg2" valign="middle" width="14%">
+<a href="http://foro.elhacker.net/profiles/4nc3str4l-u460542.html" title="Ver perfil de 4nc3str4l">4nc3str4l</a>
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+2
+</td>
+<td class="windowbg" align="center" valign="middle" width="4%">
+1,399
+</td>
+<td class="windowbg2" valign="middle" width="22%">
+<a href="http://foro.elhacker.net/java/regalo_para_los_que_empiezar_a_programar_triangulos_recursivos-t370095.0.html;msg1915004#new"><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/last_post.gif" alt="Último mensaje" title="Último mensaje" style="float: right;"></a>
+<span class="smalltext">
+25 Enero 2014, 10:01 <br>
+por <a href="http://foro.elhacker.net/profiles/darksorcerer-u461122.html">DarkSorcerer</a>
+</span>
+</td>
+</tr>
+</tbody></table>
+</div><img src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/blank.gif" alt="" id="fetchSessionTemp"> </td>
+</tr>
+<tr>
+<td align="CENTER" valign="BOTTOM"> </td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<table class="" align="center" width="95%" bgcolor="#BCD1DC" border="0" cellpadding="0" cellspacing="1">
+<tbody>
+<tr>
+<td>
+<table width="100%" bgcolor="#BCD1DC" border="0" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="right" valign="middle" width="25%" bgcolor="#BCD1DC">
+<table align="center" width="95%" border="0">
+<tbody><tr>
+<td><div align="center">
+<br><table align="center" width="90%">
+<tbody><tr class="windowbg">
+<td><a href="http://www.driverlandia.com/" rel="nofollow" target="_blank" title="DriverLandia">DriverLandia</a></td>
+<td><a href="http://www.mundodivx.com/" rel="nofollow" target="_blank" title="MundoDivx">MundoDivx</a></td>
+<td><a href="http://www.hispabyte.net/" rel="nofollow" target="_blank" title="Hispabyte">Hispabyte</a></td>
+<td><a href="http://www.truzone.org/" rel="nofollow" target="_blank" title="Truzone">Truzone</a></td>
+</tr>
+<tr class="windowbg">
+<td><a href="http://www.yashira.org/" rel="nofollow" target="_blank">Yashira.org</a></td>
+<td><a href="http://www.indetectables.net/" rel="nofollow" target="_blank" title="indetectables">indetectables.net</a></td>
+<td><a href="http://www.dragonjar.org/" rel="nofollow" target="_blank" title="Seguridad Informática Colombia">Seguridad Colombia</a></td>
+<td><a href="http://www.segu-info.com.ar/" rel="nofollow" target="_blank" title="Seguridad Informatica">Seguridad Informática</a></td>
+</tr>
+<tr class="windowbg">
+<td><a href="http://bandaancha.eu/" rel="nofollow" target="_blank" title="Internet móvil">Internet móvil</a></td>
+<td><a href="http://www.adslzone.net/" rel="nofollow" target="_blank" title="ADSL">ADSL</a></td>
+<td><a href="http://www.enye-sec.org/" rel="nofollow" target="_blank" title="eNYe Sec">eNYe Sec</a></td>
+<td><a href="http://foro.seguridadwireless.net/" rel="nofollow" target="_blank" title="Seguridad Wireless">Seguridad Wireless</a></td>
+</tr>
+<tr class="windowbg">
+<td><a href="http://underground.org.mx/" rel="nofollow" target="_blank" title="Comunidad Underground México">Underground México</a></td>
+<td><a href="http://www.elladodelmal.com/" rel="nofollow" target="_blank" title="Un informático en el lado del mal">El Lado del Mal</a></td>
+<td><a href="http://uxio0.blogspot.com/" rel="nofollow" target="_blank" title="Blog Uxio">Blog Uxio</a></td>
+<td><a href="http://thehackerway.com/" rel="nofollow" target="_blank" title="thehackerway">thehackerway</a></td>
+</tr>
+<tr class="windowbg">
+<td><a href="http://www.ciudadwireless.com/?seg=hack" rel="nofollow" target="_blank" title="Tienda Wifi">Tienda Wifi</a></td>
+<td><a href="http://underc0de.org/" rel="nofollow" target="_blank" title="underc0de.org">underc0de</a></td>
+</tr>
+</tbody></table>
+<br>
+<font size="1">Todas las webs afiliadas están libres de publicidad engañosa.</font>
+</div></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td align="center" height="5"></td>
+</tr>
+<tr>
+<td align="center" valign="middle" width="50%" bgcolor="#BCD1DC"><a href="http://www.elhacker.net/legal.html" target="_blank">Aviso Legal</a> -
+<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.21</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF © 2006-2008, Simple Machines</a>
+</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+ 
+<script data-rocketoptimized="true" type="text/rocketscript">
+  (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+
+  ga("create", "UA-79854-1", "auto");
+  ga("send", "pageview");
+
+</script>
+ 
+<script data-rocketoptimized="true" type="text/rocketscript"><!--
+// http://labs.elhacker.net/cake-js
+if(document.cookie.match(/enableCAKE=SI/))
+	document.write("<script src=/cake.js></script>");
+//--></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://foro.elhacker.net/Themes/converted/ehnImagenes.js"></script>
+
+<script data-rocketoptimized="true" data-rocketsrc="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_9127007539879"></iframe><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Ejercicios%20Recursivos%20en%20Java%20y%20sus%20Soluciones_files/postmessageRelay.html" id="oauth2relay1509665842" name="oauth2relay1509665842"></iframe></body></html>

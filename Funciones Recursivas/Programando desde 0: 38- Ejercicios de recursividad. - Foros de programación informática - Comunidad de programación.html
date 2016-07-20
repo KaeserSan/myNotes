@@ -1,0 +1,2546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+	<title>Programando desde 0: 38- Ejercicios de recursividad. - Foros de programación informática - Comunidad de programación</title>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="alternate" type="application/rss+xml" title="RSS Genérico" href="http://www.foro.lospillaos.es/rss.php">
+	<link href="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/LpS.css" rel="stylesheet" type="text/css">
+	<link href="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/formIE.css" rel="stylesheet" type="text/css">
+<!--  <link rel="canonical" href="http://www.foro.lospillaos.es/" >-->
+  <link rel="icon" href="http://www.foro.lospillaos.es/templates/LpS/images/lospillaos.ico" type="image/x-icon">
+  <!--Genera metas dinámicas-->
+  <meta name="description" content="Programando desde 0: 38- Ejercicios de recursividad. - Programación en general">
+  <meta name="keywords" content="">
+  <meta name="robots" content="all">
+<!--  <meta name="Revisit" content="4 days">-->
+
+<script src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/analytics.js" async=""></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3194657-1', 'lospillaos.es');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body class="ini">
+<div class="topcabecera">
+  <a name="top"></a>
+  <table class="forumline" style="margin-top: 0px" border="0" cellpadding="0" cellspacing="0">
+  	<tbody><tr>
+      <td><span>Fecha y hora actual: Viernes 08 Jul 2016 10:55</span></td>
+      <td style="text-align:right">
+      </td>
+    </tr>
+  </tbody></table>
+
+
+
+  <div class="cabecera">
+    <div class="searchBox">
+      <form action="http://www.foro.lospillaos.es/search.php" id="cse-search-box">
+        <div>
+          <input name="cx" value="partner-pub-7649276504565955:94d7s6-c79x" type="hidden">
+          <input name="cof" value="FORID:10" type="hidden">
+          <input name="ie" value="ISO-8859-1" type="hidden">
+          <input style="background: rgb(255, 255, 255) url(&quot;https://www.google.com/cse/static/es/google_custom_search_watermark.gif&quot;) no-repeat scroll left center;" name="q" size="31" class="post" type="text">
+          <input name="sa" value="Buscar" class="mainoption" type="submit">
+        </div>
+      <input value="www.foro.lospillaos.es/programando-desde-0-38-ejercicios-de-recursividad-vt9853.html" name="siteurl" type="hidden"><input value="www.google.es/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=8&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiVjdD9y-PNAhWEOxoKHeJrDYMQFghKMAc&amp;url=http%3A%2F%2Fwww.foro.lospillaos.es%2Fprogramando-desde-0-38-ejercicios-de-recursividad-vt9853.html&amp;usg=AFQjCNFhB11dvoiQzuOI4jxK_uQfSo-ytw" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+      <script type="text/javascript" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/brand"></script>
+    </div>
+
+
+    <div class="cabecera2">
+    	<a href="http://www.foro.lospillaos.es/index.php" title="Índice del Foro"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/logo01.gif" alt="Índice del Foro" title="Foro de programación - LosPillaos" border="0"><img class="imglogo" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/logo2.gif" alt="Índice del Foro" title="Foro de programación - LosPillaos"></a>
+    </div>
+
+    <h1><span class="textologo">Foros de programación informática - Comunidad de programadores</span></h1>
+    <div class="welcome">
+      <h1 class="logo">Foros de programación informática, diseño gráfico y Web</h1>
+      <h2 class="des">En esta comunidad intentaremos dar soporte de 
+programación a todos los niveles, desde principiantes a profesionales de
+ la informática, desarrollo de programas, programación web y mucho más.</h2>
+    </div>
+  </div>
+</div>
+
+<table class="forumline" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+		<td colspan="2" valign="bottom"><h2>Programando desde 0: 38- Ejercicios de recursividad.</h2></td>
+        <td style="text-align: right; vertical-align: top">
+        	<span class="gensmall"></span>
+        </td>
+  </tr>
+</tbody></table>
+
+<table class="forumline" style="margin-top:0px" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td style="vertical-align:bottom; white-space:nowrap">
+    <span class="nav"><a href="http://www.foro.lospillaos.es/posting.php?mode=reply&amp;t=9853"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/reply.gif" alt="Responder al Tema" align="middle" border="0"></a></span>
+
+      <!--<a href="posting.php?mode=reply&amp;t=9853" class="nav"><input type="submit" class="liteoption" value="Responder al Tema" alt="Responder al Tema" /></a> -->
+    </td>
+    <td style="text-align:right">
+    	<span class="gensmall"><b><span class="paginacion">Ir a página</span> <span class="paginacion_activo">1</span><span class="paginacion_inactivo"><a href="http://www.foro.lospillaos.es/2-vt9853.html?amp;postdays=0&amp;postorder=asc&amp;start=15">2</a></span><span class="paginacion2"><a href="http://www.foro.lospillaos.es/siguiente-vt9853.html?amp;postdays=0&amp;postorder=asc&amp;start=15">Siguiente</a></span></b></span><br>
+        <div style="margin-top: 4px" class="gensmall"><img style="vertical-align:middle" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/topic_go_previous.gif"> <a href="http://www.foro.lospillaos.es/ver-tema-anterior-vt9853.html?amp;&amp;view=previous">Ver tema anterior</a> | <a href="http://www.foro.lospillaos.es/ver-siguiente-tema-vt9853.html?amp;&amp;view=next">Ver siguiente tema</a> <img style="vertical-align:middle" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/topic_go_next.gif"></div>
+        </td>
+  </tr>
+</tbody></table>
+
+	
+<table class="forumline" border="0" cellpadding="3" cellspacing="1">
+	<tbody><tr>
+    <td class="catLeft" colspan="6"><h2 class="cattitle"><a href="http://www.foro.lospillaos.es/index.php" class="nav">Índice del Foro</a> &gt; <a href="http://www.foro.lospillaos.es/programacion-en-general-vf30.html" class="nav">Programación en general</a> &gt; Programando desde 0: 38- Ejercicios de recursividad.</h2></td>
+  </tr>
+	<tr>
+		<th class="thCornerL" nowrap="nowrap" width="150">Autor</th>
+		<th class="thCornerL" nowrap="nowrap">Mensaje</th>
+	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="24012"></a><b>Kyshuo Ayame</b></span><br><span class="postdetails">Moderador Global<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/1-5.jpg" alt="" border="0"><br><br>Registrado: 07 Ene 2011<br>Mensajes: 973<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=24012#24012"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Martes 29 Nov 2011 20:54</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=24012"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody"><span style="font-weight: bold"><span style="font-size: 18px; line-height: normal">Ejercicios de Recursividad:</span></span>
+<br>
+
+<br>
+Hay de todo, algunos bien sencillos y otros muy difíciles.
+<br>
+Yo estaré siempre disponible para cualquier consulta que tengan.
+<br>
+
+<br>
+<span style="font-weight: bold">Ejercicio 1: Fácil</span>
+<br>
+
+<br>
+Escriban una función booleana recursiva llamada SonIguales que reciba 
+dos listas como parámetros y devuelva TURE si son iguales (mismos 
+elementos en el mismo orden), o FALSE en caso contrario.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 2: Fácil</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada ExisteElemento que verifique si un elemento x se encuentra en una lista L.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 3: Fácil</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada Ocurrencia que cuente la cantidad de ocurrencias de un elemento x en una lista L.
+<br>
+	Escriban una función recursiva llamada Suma que retorne la suma de los elementos de una lista de enteros  L.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 4: Fácil</span>
+<br>
+
+<br>
+Escriba una función recursiva llamada Eliminar que elimine el elemento x de la lista L.
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 5: Medio</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada InsertarOrdenado que inserte en forma ordenada un elemento x en una lista ordenada L.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 6: Medio</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada OrdenarLista que ordene una lista L.
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 7: Medio</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada Merge que, a partir de dos listas
+ ordenadas L1 y L2, genere una lista ordenada L3, a través de un proceso
+ de intercalación de elementos (merge).
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 8: Medio</span>
+<br>
+
+<br>
+Escriba una función recursiva llamada Invertir que, dada una lista L, la invierta.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 9: Fácil</span>
+<br>
+
+<br>
+Escriba una función recursiva llamada Maximo que calcule el máximo de una lista de naturales L.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 10: Difícil</span>
+<br>
+
+<br>
+En una hilera de una calle con adoquines unos niños juegan a la rayuela. Para esto numeran los adoquines de la siguiente forma:
+<br>
+
+<br>
+<img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/dibujo49.jpg" border="0">
+<br>
+
+<br>
+Los movimientos permitidos del juego son:
+<br>
+</p><ul><li>Al principio del juego los niños se ubican en el adoquín 0. 
+<br>
+</li><li>De un adoquín numerado i se puede saltar al adoquín numerado i+1. 
+<br>
+</li><li>De un adoquín numerado i se puede saltar al adoquín numerado i+2 (sin pasar por el adoquín i+1) 
+<br>
+</li><li>Por ejemplo, el número de caminos posibles para n=3 es 3 y son los siguientes: (0,1,2,3), (0,2,3) y (0,1,3).</li></ul>
+<br>
+
+<br>
+Escriban una función recursiva llamada CaminosPosibles que calcule el 
+número de caminos posibles para alcanzar un adoquín objetivo numerado 
+con n (mayor que cero).
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 11: Medio</span>
+<br>
+
+<br>
+Escriban una función recursiva llamada MCD que calcule el Máximo Común Divisor de 2 naturales a y b (con a &gt;= b).
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 12 – Problema de las Torres de Hanoi: Muy difícil</span>
+<br>
+
+<br>
+Escenario: existen tres cilindros verticales donde es posible insertar 
+discos. En uno de los cilindros hay n discos todos de diferente tamaño, 
+colocados en orden de tamaño con el más chico arriba. Los otros dos 
+cilindros están vacíos.
+<br>
+
+<br>
+<img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/dibujo50.jpg" border="0">
+<br>
+
+<br>
+El  problema es  pasar  la torre de discos completa a otro de  los 
+cilindros  usando como único movimiento elemental  el   cambio de un 
+disco de un  cilindro  a otro  cualquiera,  sin que en ningún momento un
+ disco vaya a colocarse encima de otro más chico que él.  
+<br>
+
+<br>
+Escriban el  pseudocódigo de  los procedimientos  que consideren 
+necesarios  para  imprimir  las secuencias de movimientos elementales  
+que  resuelvan el  problema de  las   torres  de Hanoi, de cualquier 
+tamaño.  Los movimientos elementales son de la forma: MOVER DISCO x DEL 
+cilindroY AL cilindroZ. 
+<br>
+
+<br>
+En <a href="http://www.dynamicdrive.com/dynamicindex12/towerhanoi.htm" target="_blank" class="postlink">este enlace</a> pueden jugar con el problema de las Torres de Hanoi para visualizarlo mejor.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="color: green"><span style="font-size: 18px; line-height: normal">Notas acerca de los ejercicios </span>13 al 17:</span>
+<br>
+
+<br>
+Tengan en cuenta que para algunos de los siguientes ejercicios, es importante considerar:
+<br>
+
+<br>
+1. Que puede ser necesario definir funciones auxiliares.
+<br>
+2. Que   los   parámetros   de   entrada   o  salida   de   las   
+funciones   pueden   contener  más   de   un elemento (ej: un parámetro 
+que es una pareja).
+<br>
+3. Es parte de la resolución de los problemas decidir que parámetros es 
+necesario considerar para la entrada o salida de la función.
+<br>
+
+<br>
+<span style="font-weight: bold">Ejercicio 13: Dificil</span>
+<br>
+
+<br>
+Implementen en MODULA-2 y usando recursión el procedimiento del ejercicio 9 del apartado anterior de ejercicios de aplicación. 
+<br>
+Dicho procedimiento recibe como parámetro una lista de naturales de tipo
+ LNat y muestra todos los números de dicha lista, desde el último al 
+primero, es decir, al revés. Ver el tipo LNat definido en el ejercicio 9
+ del apartado anterior de ejercicios de aplicación.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 14: Muy Dificil</span>
+<br>
+
+<br>
+Consideren la siguiente representación de polinomios mediante Listas de coeficientes:
+<br>
+P(x) = anxn + an-1x n-1 +…+ a1x1 + a0x0  se representa mediante la lista an, an-1, ... , a1, a0.
+<br>
+a. Escriban   el  pseudocódigo de  una   función  recursiva  que  evalúe
+ un polinomio usando  la regla de Horner (P(x) = ((...((an* x) + an-1)x 
+)+ ... + a1)x + a0).
+<br>
+b. Implementen la función de la parte a) en MODULA-2.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 15: Dificil</span>
+<br>
+
+<br>
+Escriban una  función  recursiva  SumaC  que dada una  lista de Enteros 
+ positivos, indique la mínima cantidad de elementos consecutivos al 
+final de la lista cuya suma  sea mayor o  igual  que una determinada 
+cantidad C, que   se   recibe   como parámetro. Algunos ejemplos son:
+<br>
+
+<br>
+<ul>1, 2, 3, 4, 5, 6, 7 con C = 8 da 2 porque ( 6+7=13 &gt; 8)
+<br>
+7, 6, 5, 4, 3, 2, 1 con C = 8 da 4 porque (4+3+2+1=10 &gt; 8)
+<br>
+3, 6, 1, 7, 5, 2, 9 con C = 13 da 3 porque (5+2+9=16 &gt; 13)</ul>
+<br>
+
+<br>
+Nota: Si  C supera  la suma de todos  los elementos de  la  lista deberá
+ retornarse  la cantidad de elementos que tiene la lista.
+<br>
+Para este ejercicio no se permite invertir la lista y luego resolverlo para los primeros elementos.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 16: Muy difícil</span>
+<br>
+
+<br>
+Consideren la siguiente representación de números binarios mediante Listas de dígitos:
+<br>
+
+<br>
+<ul>el número binario 1 (en base 10 es el 1) se representa mediante la lista [1]
+<br>
+el número binario 10 (en base 10 es el 2) se representa mediante la lista [1,0]
+<br>
+el número binario 110 (en base 10 es el 6) se representa mediante la lista [1,1,0]</ul>
+<br>
+
+<br>
+Escriban  un  procedimiento   recursivo  Incremento  que  le  sume 1 a 
+un número binario, sin duplicar la lista. Algunos ejemplos de resultados
+ son:
+<br>
+
+<br>
+<ul>Incremento([1]) = [1,0]
+<br>
+Incremento([1,0])= [1,1]
+<br>
+Incremento([1,1,0]) = [1,1,1]</ul>
+<br>
+
+<br>
+Sugerencia: Considere como precondición de su procedimiento que la lista no puede ser vacía.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+<span style="font-weight: bold">Ejercicio 17: Muy difícil</span>
+<br>
+
+<br>
+Una  isla  es  una  agrupación de celdas   (al  menos  una)   con  valor
+  1,  cada una de  las   cuales  es adyacente horizontal  y/o 
+verticalmente a una celda del  mismo grupo. Una  isla está delimitada, 
+horizontal y verticalmente, por celdas con valor 0 o por los límites 
+(fronteras) del mapa.
+<br>
+
+<br>
+<img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/dibujo51.jpg" border="0">
+<br>
+
+<br>
+Por   ejemplo,  en   el  mapa   que   se   presenta   de tamaño   5x10, 
+  hay   6   islas,   las   cuales están compuestas de las siguientes 
+celdas:
+<br>
+<ul><li>Isla 1: (1,1) (1,2) (1,3) (2,1) (2,2)
+<br>
+</li><li>Isla 2: (3,4)
+<br>
+</li><li>Isla 3: (4,5)
+<br>
+</li><li>Isla 4: (5,1) (5,2) (5,3)
+<br>
+</li><li>Isla   5:  (1,6) (1,7) (1,8) (1,9) (1,10)   (2,10) (2,7) (3,7) (4,7) (5,7) (5,8)
+<br>
+</li><li>Isla 6: (5,10)</li></ul>
+<br>
+
+<br>
+Notar que (3,4) y (4,5) no forman una isla, sino que son dos islas distintas.
+<br>
+
+<br>
+Escriban el  pseudocódigo de un programa que, dado un mapa representado 
+por una matriz de tamaño  NxM  de   ceros   y   unos,  donde   0   
+representa   agua   y   1   tierra,  imprima   las   islas encontradas 
+en el mismo. 
+<br>
+
+<br>
+Nota: Se pide que el  programa  imprima las celdas de cada isla del mapa
+  siguiendo el formato del ejemplo. El orden de impresión entre las 
+islas no es relevante, ni tampoco el orden en que se imprimen las celdas
+ de cada isla.
+<br>
+
+<br>
+-------------------------------------------------------------------------------------
+<br>
+
+<br>
+Mucha suerte.<p></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="26216"></a><b>Sebastián Marcos</b></span><br><span class="postdetails">Usuario Inquieto<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/92.jpg" alt="" border="0"><br><br>Registrado: 04 Oct 2011<br>Mensajes: 133<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=26216#26216"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Sábado 17 Mar 2012 20:04</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=26216"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Estimado Kyshuo, estoy 
+empezando a realizar los ejercicios de recursividad, y pues, a mi 
+entender, es como una nueva forma de pensar las cosas, un tanto más 
+sutil, y también no hay duda que requiere muchísima práctica.
+<br>
+
+<br>
+A continuación publico el código del ejercicio 4, que en realidad 
+elimina el primer elemento de la lista igual a uno dado x (si es que lo 
+contiene la lista).
+<br>
+TLista es un tipo lista que yo declaré con campos elemento y siguiente, así como TElem representa un tipo cualquiera para x.
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE elimine(VAR l: TLista; x: TElem);
+<br>
+VAR
+<br>
+&nbsp; aux: TLista;
+<br>
+
+<br>
+BEGIN
+<br>
+&nbsp; IF (l= NIL) THEN
+<br>
+
+<br>
+&nbsp; ELSIF (x= l^.elemento) THEN
+<br>
+&nbsp; &nbsp; aux:= l^.siguiente;
+<br>
+&nbsp; &nbsp; DISPOSE(l);
+<br>
+&nbsp; &nbsp; l:=aux;
+<br>
+&nbsp; ELSE
+<br>
+&nbsp; &nbsp; elimine(l^.siguiente,x);
+<br>
+&nbsp; END;
+<br>
+
+<br>
+END elimine;
+<br>
+
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+Como se ve, un caso base es que la lista que se pasa sea vacía. Supongo 
+que el bloque del ELSIF también es otro caso base (¿O podemos decir que 
+entra dentro del caso general?), o sea, cuando se llega a que se 
+encuentra el elemento de la lista (si es que efectivamente está en la 
+lista).
+<br>
+Por último, en el bloque del ELSE está el llamado recursivo.
+<br>
+Con la variable auxiliar aux (tipo puntero) "engancho" los punteros 
+luego de eliminar el nodo correspondiente, no sé si esto está muy bien 
+hecho.
+<br>
+Otra cosa "desprolija" es que no hay ninguna instrucción luego del 
+primer IF, pero si la lista que se recibe es vacía no se hace nada, por 
+eso lo planteé así.
+<br>
+
+<br>
+Cualquier comentario, o mejora del procedimiento será bienvenido.
+<br>
+Saludos para todos.</span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="26230"></a><b>Sebastián Marcos</b></span><br><span class="postdetails">Usuario Inquieto<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/92.jpg" alt="" border="0"><br><br>Registrado: 04 Oct 2011<br>Mensajes: 133<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=26230#26230"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Domingo 18 Mar 2012 18:08</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=26230"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Viendo el código, está 
+claro que no implementé una función, sino un procedimiento. De igual 
+modo, suponiendo que fuera ésto lo que se necesitara, cualquier 
+comentario o corrección será bienvenido.
+<br>
+Saludos a todos !!!</p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="26232"></a><b>Kyshuo Ayame</b></span><br><span class="postdetails">Moderador Global<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/1-5.jpg" alt="" border="0"><br><br>Registrado: 07 Ene 2011<br>Mensajes: 973<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=26232#26232"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Domingo 18 Mar 2012 19:09</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=26232"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Aunque no era exacto lo 
+que se pedía está bien hecho y le vas agarrando el hilo a esto de la 
+recursividad, que bien sabemos no es para nada fácil de aprender...
+<br>
+
+<br>
+Respecto a este comentario
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Cita:</b></span></td>	</tr>	<tr>	  <td class="quote">(...)Supongo que el bloque del ELSIF también es otro caso base...</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+Sí, es un caso base. Todo lo que se resuelve por sí mimo es caso base.
+<br>
+
+<br>
+Excelente trabajo amigo Sebastián...</span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="26243"></a><b>Sebastián Marcos</b></span><br><span class="postdetails">Usuario Inquieto<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/92.jpg" alt="" border="0"><br><br>Registrado: 04 Oct 2011<br>Mensajes: 133<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=26243#26243"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 19 Mar 2012 05:13</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=26243"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Hola a todos !!!
+<br>
+Bueno, aquí publico mi código del ejercicio 2, cuyo enunciado es:
+<br>
+Escriban una función recursiva llamada ExisteElemento que verifique si un elemento x se encuentra en una lista L. 
+<br>
+Como siempre digo, no sé si será la mejor solución, pero en principio funciona.
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE ExisteElemento(L: TLista; x: TElem): BOOLEAN;
+<br>
+BEGIN
+<br>
+&nbsp; IF (L= NIL) THEN
+<br>
+&nbsp; &nbsp; RETURN FALSE;
+<br>
+&nbsp; ELSIF (L^.elemento= x) THEN
+<br>
+&nbsp; &nbsp; RETURN TRUE;
+<br>
+&nbsp; ELSE
+<br>
+&nbsp; &nbsp; RETURN ExisteElemento(L^.siguiente,x);
+<br>
+&nbsp; END;
+<br>
+END ExisteElemento;
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+elemento (del tipo TElem) y siguiente son los campos de la lista del tipo TLista que se pasa como parámetro efectivo.
+<br>
+Como pueden ver paso por valor la lista ya que esta función no modifica a la misma, sólo nos devuelve información sobre ella.
+<br>
+Además los casos base son 1) Se pasa la lista vacía y 2) La lista tiene un sólo elemento (nodo).
+<br>
+Saludos a todos !!!</span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="29419"></a><b>sr floyd</b></span><br><span class="postdetails">Usuario Activo<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/50.jpg" alt="" border="0"><br><br>Registrado: 05 Sep 2011<br>Mensajes: 196<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=29419#29419"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 01 Oct 2012 08:05</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=29419"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Hola, esta es una 
+respuesta al ejercicio numero 10, es una función recurrente llamada 
+CantidadCaminos, corre dentro de un programa principal que pide el 
+número de celda e imprime en pantalla la cantidad de posibles caminos; 
+le he hecho pruebas y todas las ha superado jeje:
+<br>
+NOTA: se asume de acuerdo a la letra del ejercicio que el numero de la celda ingresada es N&gt;0.
+<br>
+
+<br>
+ <table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">MODULE Caminos;
+<br>
+
+<br>
+FROM STextIO IMPORT WriteString,SkipLine,WriteLn;
+<br>
+FROM SWholeIO IMPORT WriteCard,ReadCard;
+<br>
+FROM Storage IMPORT ALLOCATE;
+<br>
+
+<br>
+VAR x,z: CARDINAL;
+<br>
+
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; PROCEDURE CantidadCaminos ( N: CARDINAL ): CARDINAL;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TYPE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Lista = POINTER TO NodoLista;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NodoLista = RECORD
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;elem: CARDINAL;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sig: Lista;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;END;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PROCEDURE CrearLista (N: CARDINAL ): Lista;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;VAR&nbsp; Linked,aux: Lista;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i: CARDINAL;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BEGIN
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;NEW (Linked);&nbsp; &nbsp; Linked^.elem:=N;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;NEW (Linked^.sig);&nbsp; aux:= Linked^.sig;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;FOR i:=N-1 TO 0 BY -1 DO
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;aux^.elem:=i;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;NEW(aux^.sig);
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;aux:=aux^.sig;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;END;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aux:=NIL;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;RETURN Linked;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;END CrearLista;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; VAR
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; aux,L : Lista;
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; a,b: CARDINAL;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; NEW(L);
+<br>
+&nbsp; &nbsp; L:=CrearLista(N);
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; IF L^.elem = 1 THEN&nbsp; &nbsp; &nbsp;(* Casos bases *)
+<br>
+&nbsp; &nbsp; RETURN 1;
+<br>
+&nbsp; &nbsp; ELSIF&nbsp; L^.elem=2 THEN
+<br>
+&nbsp; &nbsp; RETURN 2;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; ELSE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (* llamado recursivo *)
+<br>
+&nbsp; &nbsp; a:= CantidadCaminos(L^.sig^.elem);
+<br>
+&nbsp; &nbsp; NEW(aux); aux:= L^.sig^.sig;
+<br>
+&nbsp; &nbsp; b:= CantidadCaminos( aux^.elem);
+<br>
+&nbsp; &nbsp; RETURN
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; a + b ;
+<br>
+&nbsp; &nbsp; END;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;END CantidadCaminos;
+<br>
+&nbsp; &nbsp;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;BEGIN
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;WriteString('Digite un número de celda: '); ReadCard(x); SkipLine();
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;WriteLn();
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;z:= CantidadCaminos(x);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;WriteString('La cantidad de caminos es: '); WriteCard(z,1);
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;END Caminos.&nbsp; &nbsp;</td>	</tr></tbody></table><span class="postbody"></span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     <a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a>
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="29423"></a><b>Kyshuo Ayame</b></span><br><span class="postdetails">Moderador Global<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/1-5.jpg" alt="" border="0"><br><br>Registrado: 07 Ene 2011<br>Mensajes: 973<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=29423#29423"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 01 Oct 2012 15:35</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=29423"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Amigo, no le he hecho 
+pruebas exaustivas pero las que sí hice las pasó super bien. Un trabajo 
+excelente, de verdad. ¿Se ha entendido entonces la recursividad? La 
+verdad es genial que hayas podido resolver este ejercicio tú solo y sin 
+preguntas.
+<br>
+
+<br>
+Sigue así amigo, serás capaz de crear las aplicaciones que quieras.</p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=71990"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="29424"></a><b>sr floyd</b></span><br><span class="postdetails">Usuario Activo<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/50.jpg" alt="" border="0"><br><br>Registrado: 05 Sep 2011<br>Mensajes: 196<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=29424#29424"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 01 Oct 2012 21:20</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=29424"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Infinitas Gracias por todo tu apoyo Kyshuo!!</p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     <a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a>
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="29471"></a><b>sr floyd</b></span><br><span class="postdetails">Usuario Activo<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/50.jpg" alt="" border="0"><br><br>Registrado: 05 Sep 2011<br>Mensajes: 196<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=29471#29471"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Viernes 05 Oct 2012 00:34</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=29471"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Y bueno este es una 
+respuesta al ejercicio 16. Es un programa ayudado por 3 procedimientos: 
+LeerBinario, HastaUltimo y EscribirBinario(todos recursivos); 
+básicamente LeerBinario lo implementé debido a que se considera la 
+lectura en listas encadenadas del tipo inductivo al igual que la 
+escritura; dicho procedimiento necesita saber hasta donde debe leer, 
+pero como no conozco un procedure que lo permita tal como EOLN en Pascal
+ pero para cardinales entonces se apoya de un cardinal (N) que le indica
+ el número de digitos ingresados; Los digitos deben ingresarse con un 
+espacio en blanco entre ellos porque cada uno es del tipo CARDINAL.
+<br>
+El papel que desempeña HastaUltimo (Función) es retornar la dirección 
+del ultimo nodo, ésto es porque si el elemento almacenado allí es 0 se 
+cambia por 1, de lo contrario se agrega otro sucecivo 
+(UltimoNodo^.siguiente) y se almacena un 0.
+<br>
+El resultado es un programa como dije mas no un procedimiento como lo 
+pide la letra, ¿qué habría que hacer para volverlo un procedimiento 
+llamado desde un programa principal? que sea uno tal que haga un llamado
+ por referencia a la variable que representa el primer nodo de la Lista,
+ en este caso L1, la modificación sería sencilla... 
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">MODULE Binario;
+<br>
+
+<br>
+FROM STextIO IMPORT WriteString,WriteLn,SkipLine;
+<br>
+FROM Storage IMPORT ALLOCATE;
+<br>
+FROM SWholeIO IMPORT ReadCard,WriteCard;
+<br>
+
+<br>
+TYPE
+<br>
+
+<br>
+Lista= POINTER TO NodoLista;
+<br>
+NodoLista = RECORD
+<br>
+elem: CARDINAL;
+<br>
+sig: Lista;
+<br>
+END;
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE HastaUltimo(L:Lista): Lista;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; VAR aux: Lista;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp; &nbsp; IF L^.sig= NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RETURN L;
+<br>
+&nbsp; &nbsp; &nbsp; ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NEW(aux);
+<br>
+&nbsp; &nbsp; aux:=HastaUltimo(L^.sig);
+<br>
+&nbsp; &nbsp; RETURN aux;
+<br>
+&nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;END HastaUltimo;
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE LeerBinario ( VAR L: Lista; iterar:CARDINAL; tope: CARDINAL);
+<br>
+
+<br>
+&nbsp; &nbsp; BEGIN
+<br>
+
+<br>
+&nbsp; &nbsp; IF iterar=tope THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;L:=NIL;
+<br>
+&nbsp; &nbsp; ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;iterar:=iterar+1;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;ReadCard(L^.elem);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NEW(L^.sig);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;LeerBinario( L^.sig,iterar,tope);
+<br>
+&nbsp; &nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; END LeerBinario;
+<br>
+
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE EscribirBinario (L: Lista);
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;BEGIN
+<br>
+&nbsp; &nbsp; &nbsp;IF L=NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp;WriteLn(); WriteLn(); WriteLn(); WriteLn(); WriteLn(); WriteLn();
+<br>
+&nbsp; &nbsp; &nbsp;WriteString("&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Alan Turing era un genio!!!");
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WriteCard(L^.elem,1);
+<br>
+&nbsp; &nbsp; EscribirBinario(L^.sig);
+<br>
+&nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; &nbsp;END&nbsp; EscribirBinario;
+<br>
+
+<br>
+
+<br>
+VAR
+<br>
+L1,aux: Lista;
+<br>
+N,cont: CARDINAL;
+<br>
+
+<br>
+BEGIN
+<br>
+NEW(L1);
+<br>
+WriteString("Cuántos digitos tendrá el binario?: "); ReadCard(N); SkipLine;
+<br>
+WriteString("Binario de "); WriteCard(N,1); WriteString(" cifras: ");
+<br>
+
+<br>
+
+<br>
+&nbsp;cont:=0;
+<br>
+&nbsp;LeerBinario (L1,cont,N);
+<br>
+&nbsp;SkipLine;
+<br>
+
+<br>
+&nbsp;aux:=HastaUltimo (L1);
+<br>
+&nbsp;aux^.sig:=NIL;
+<br>
+
+<br>
+IF aux^.elem = 0 THEN
+<br>
+&nbsp; &nbsp;aux^.elem := 1;
+<br>
+ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; NEW(aux^.sig);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; aux^.sig^.elem:= 0;
+<br>
+&nbsp; &nbsp;aux^.sig^.sig:=NIL;
+<br>
+
+<br>
+&nbsp; &nbsp; END;
+<br>
+
+<br>
+&nbsp;WriteString("El resultado es: ");
+<br>
+&nbsp;EscribirBinario(L1);
+<br>
+
+<br>
+END Binario.
+<br>
+
+<br>
+</td>	</tr></tbody></table><span class="postbody"></span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     <a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a>
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="29501"></a><b>sr floyd</b></span><br><span class="postdetails">Usuario Activo<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/50.jpg" alt="" border="0"><br><br>Registrado: 05 Sep 2011<br>Mensajes: 196<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=29501#29501"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Sábado 06 Oct 2012 08:07</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=29501"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Y aqui mi ultima propuesta
+ en este apartado de Recursividad. Se trata del ejercicio 15 que es un 
+programa que cuenta con 7 Procedimientos (todos recursivos); el hecho de
+ que no se pueda invertir la lista lo acompleja bastante y es eso 
+precisamente la virtud del ejercicio; me alegra haber diseñado con mas 
+elegancia la lectura de la lista (en comparación al ejercicio anterior),
+ en este caso es el usuario quien decide cuando terminar de digitar los 
+elementos de la misma. Al igual que el anterior ejercicio le he hecho el
+ testing que se me ha ocurrido y ha respondido correctamente.
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">MODULE&nbsp; SumaC;
+<br>
+
+<br>
+FROM SWholeIO IMPORT ReadCard, WriteCard;
+<br>
+FROM STextIO&nbsp; IMPORT WriteString, WriteLn, SkipLine, WriteChar,ReadChar;
+<br>
+FROM Storage IMPORT ALLOCATE;
+<br>
+
+<br>
+&nbsp;TYPE
+<br>
+&nbsp;Lista = POINTER TO NodoLista;
+<br>
+&nbsp;NodoLista = RECORD
+<br>
+&nbsp;elem: CARDINAL;
+<br>
+&nbsp;sig: Lista;
+<br>
+&nbsp;END;
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE UltimaPosicion ( L:Lista): Lista;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (* Devuelve dirección de ultimo nodo *)
+<br>
+&nbsp; &nbsp; &nbsp; VAR aux: Lista;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp; &nbsp; IF L^.sig= NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RETURN L;
+<br>
+&nbsp; &nbsp; &nbsp; ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NEW(aux);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aux:=UltimaPosicion(L^.sig);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RETURN aux;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; &nbsp; END UltimaPosicion;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;PROCEDURE NodoAnterior (L:Lista; cota: Lista): Lista;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (*Dada la dirección de un nodo llamado cota devuelve el anterior*)
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (* USADO SOLO PARA LISTAS DE AL MENOS 2 NODOS*)
+<br>
+&nbsp; &nbsp; &nbsp;VAR aux: Lista;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;BEGIN
+<br>
+&nbsp; &nbsp; &nbsp;IF L^.sig = cota THEN
+<br>
+&nbsp; &nbsp; &nbsp;RETURN L;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; NEW(aux);
+<br>
+&nbsp; &nbsp;aux:= NodoAnterior(L^.sig,cota);
+<br>
+&nbsp; &nbsp;RETURN aux;
+<br>
+&nbsp; &nbsp;END;
+<br>
+&nbsp; &nbsp; &nbsp;END&nbsp; NodoAnterior;
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE SumaElems ( L:Lista ): CARDINAL;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;(* Devuelve la suma de los elementos de Lista desde la dirección L
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hasta el último nodo*)
+<br>
+&nbsp; &nbsp; VAR&nbsp; card: CARDINAL;
+<br>
+
+<br>
+&nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp; IF L= NIL THEN
+<br>
+&nbsp; &nbsp; RETURN 0;
+<br>
+
+<br>
+&nbsp; &nbsp; ELSIF L^.sig = NIL THEN
+<br>
+&nbsp; &nbsp; RETURN L^.elem;
+<br>
+
+<br>
+&nbsp; &nbsp; ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; card:= SumaElems (L^.sig);
+<br>
+&nbsp; &nbsp;card:= L^.elem + card;
+<br>
+&nbsp; &nbsp;RETURN card;
+<br>
+&nbsp; &nbsp;END;
+<br>
+&nbsp; &nbsp; END SumaElems;
+<br>
+
+<br>
+&nbsp; &nbsp; PROCEDURE ContarNodos (COTA: Lista ): CARDINAL;
+<br>
+&nbsp; &nbsp; (* Cuenta los nodos de una lista a partir de la posición que indique cota*)
+<br>
+
+<br>
+&nbsp; &nbsp; VAR card: CARDINAL;
+<br>
+
+<br>
+&nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp; IF COTA = NIL THEN
+<br>
+&nbsp; &nbsp; RETURN 0;
+<br>
+&nbsp; &nbsp; ELSIF&nbsp; COTA^.sig = NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RETURN 1;
+<br>
+
+<br>
+&nbsp; &nbsp; ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; card:= ContarNodos (COTA^.sig);
+<br>
+&nbsp; &nbsp;card:= card+1;
+<br>
+&nbsp; &nbsp;RETURN card;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; &nbsp;END ContarNodos;
+<br>
+
+<br>
+&nbsp; &nbsp;PROCEDURE SUMAC (L1,L: Lista; C: CARDINAL): CARDINAL;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (*NOTA: L1 representa el primer nodo de la lista*)
+<br>
+&nbsp; &nbsp; VAR
+<br>
+&nbsp; &nbsp; C2: CARDINAL;
+<br>
+&nbsp; &nbsp; aux: Lista;
+<br>
+
+<br>
+&nbsp; &nbsp; BEGIN
+<br>
+&nbsp; &nbsp; NEW(aux);
+<br>
+&nbsp; &nbsp; aux:=NodoAnterior(L1,L);
+<br>
+&nbsp; &nbsp; C2:= SumaElems(aux);
+<br>
+&nbsp; &nbsp; &nbsp;IF C2 &gt;= C THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; C2:= ContarNodos(aux);
+<br>
+&nbsp; &nbsp;RETURN C2;
+<br>
+&nbsp; &nbsp; &nbsp;ELSIF (C2&lt;C) AND (aux=L1) THEN
+<br>
+&nbsp; &nbsp; &nbsp;C2:= ContarNodos(L1);
+<br>
+&nbsp; &nbsp; &nbsp;RETURN C2;
+<br>
+
+<br>
+&nbsp; &nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;C2:=SUMAC(L1,aux,C);
+<br>
+&nbsp; &nbsp; RETURN C2;
+<br>
+&nbsp; &nbsp; END;
+<br>
+&nbsp; &nbsp; &nbsp;END SUMAC;
+<br>
+
+<br>
+&nbsp; &nbsp;PROCEDURE LeerLista (VAR L:Lista; index:CARDINAL);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (* index es solo para ayudar al usuario a ver cuantos números
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; se ha ingresado a la lista *)
+<br>
+&nbsp; &nbsp;VAR a: CHAR;
+<br>
+&nbsp; &nbsp;aux: Lista;
+<br>
+&nbsp; &nbsp;BEGIN
+<br>
+&nbsp; &nbsp;IF L=NIL THEN
+<br>
+&nbsp; &nbsp;WriteString("Ha finalizado de digitar la lista.");
+<br>
+&nbsp; &nbsp;WriteLn();
+<br>
+&nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp;WriteString("Cardinal "); WriteCard(index,1);
+<br>
+&nbsp; &nbsp;WriteString(": ");
+<br>
+&nbsp; &nbsp;ReadCard(L^.elem);
+<br>
+&nbsp; &nbsp;WriteLn;
+<br>
+&nbsp; &nbsp;SkipLine;
+<br>
+
+<br>
+&nbsp; &nbsp;WriteString("Agregar Número? (S/N):");
+<br>
+&nbsp; &nbsp;ReadChar(a); SkipLine();
+<br>
+&nbsp; &nbsp; &nbsp;IF (a="N") OR (a="n") THEN
+<br>
+&nbsp; &nbsp; &nbsp; aux:=NIL;
+<br>
+&nbsp; &nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp; &nbsp;NEW(L^.sig); aux:= L^.sig;
+<br>
+&nbsp; &nbsp; &nbsp;END;
+<br>
+&nbsp; &nbsp;index:=index+1;
+<br>
+&nbsp; &nbsp;LeerLista(aux,index);
+<br>
+&nbsp; &nbsp;END;
+<br>
+&nbsp; END LeerLista;
+<br>
+
+<br>
+&nbsp; PROCEDURE&nbsp; EscribirLista(L:Lista);
+<br>
+&nbsp; BEGIN
+<br>
+&nbsp; IF L=NIL THEN
+<br>
+&nbsp; WriteChar(" ");
+<br>
+&nbsp; ELSE
+<br>
+&nbsp; WriteChar("[");
+<br>
+&nbsp; WriteCard(L^.elem,1);
+<br>
+&nbsp; WriteChar("]");
+<br>
+&nbsp; EscribirLista(L^.sig);
+<br>
+&nbsp; END;
+<br>
+&nbsp; END EscribirLista;
+<br>
+
+<br>
+
+<br>
+VAR
+<br>
+L2,AUX: Lista;
+<br>
+suma,C3: CARDINAL;
+<br>
+
+<br>
+
+<br>
+BEGIN
+<br>
+C3:=1;
+<br>
+NEW(L2);
+<br>
+LeerLista(L2,C3);
+<br>
+WriteLn();
+<br>
+WriteString("La lista que ha digitado es: ");
+<br>
+EscribirLista(L2);
+<br>
+WriteLn();
+<br>
+WriteString("Digite C: ");
+<br>
+ReadCard(C3); SkipLine;
+<br>
+
+<br>
+AUX:= UltimaPosicion(L2);
+<br>
+
+<br>
+&nbsp;IF AUX^.elem &gt;= C3 THEN
+<br>
+&nbsp; WriteLn();
+<br>
+&nbsp; EscribirLista(L2); WriteString(" con C= "); WriteCard(C3,1);
+<br>
+&nbsp; WriteString(" da "); WriteCard(1,1);
+<br>
+&nbsp;ELSE
+<br>
+&nbsp;suma:= SUMAC(L2,AUX,C3);
+<br>
+&nbsp;WriteLn();
+<br>
+&nbsp;EscribirLista(L2); WriteString(" con C= "); WriteCard(C3,1);
+<br>
+&nbsp; WriteString(" da "); WriteCard(suma,1);
+<br>
+&nbsp;END;
+<br>
+
+<br>
+
+<br>
+END SumaC.
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+En resumen han sido maravillosos los ejercicios!! Me quemaron las 
+pestañas jajaja, pero intento siempre exprimir toda mi 
+lógica...Magníficos, Muchas Gracias Kyshuo por la oportunidad!!    <img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_ok.gif" alt="Ok" border="0"></span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     <a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=119750"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a>
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="32724"></a><b>mrasd</b></span><br><span class="postdetails"><br><br><br>Registrado: 26 Abr 2013<br>Mensajes: 8<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=32724#32724"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Viernes 10 May 2013 00:24</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=32724"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Les paso como me quedó mi Merge:
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">
+<br>
+PROCEDURE Merge(l1,l2 : Lista): Lista;
+<br>
+VAR lista : Lista;
+<br>
+BEGIN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IF (l1 = NIL) AND (l2 = NIL) THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RETURN NIL;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ELSIF l1 = NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RETURN l2;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ELSIF l2 = NIL THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RETURN l1;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ELSE
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lista := Merge(l1^.sig,l2^.sig);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; InsertarOrdenado(l1^.elem, lista);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; InsertarOrdenado(l2^.elem, lista);
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RETURN lista;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;END;
+<br>
+END Merge;
+<br>
+</td>	</tr></tbody></table><span class="postbody"></span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=223970"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=223970"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="32733"></a><b>mrasd</b></span><br><span class="postdetails"><br><br><br>Registrado: 26 Abr 2013<br>Mensajes: 8<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=32733#32733"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Viernes 10 May 2013 18:24</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=32733"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">No se me ocurre como hacer el de invertir, ¿alguna idea?</p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=223970"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=223970"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="32745"></a><b>Sebastián Marcos</b></span><br><span class="postdetails">Usuario Inquieto<br><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/92.jpg" alt="" border="0"><br><br>Registrado: 04 Oct 2011<br>Mensajes: 133<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=32745#32745"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Domingo 12 May 2013 19:40</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=32745"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">Hola!
+<br>
+Se me ocurre lo siguiente, en lenguaje natural sería:
+<br>
+
+<br>
+<span style="font-weight: bold">Caso base:</span> Si la lista es vacía la retorno
+<br>
+
+<br>
+<span style="font-weight: bold">Caso inductivo:</span> Retorno el resultado de insertar al final el primer elemento de la lista en la lista que se obtiene de<span style="font-weight: bold"> invertir</span> el resto de la misma.
+<br>
+Quedó medio entreverado jeje, sería esto:
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">RETURN InsertarAlFinal(Primero(l), Invertir(Resto(l)));</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+o lo que es lo mismo:
+<br>
+
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">RETURN InsertarAlFinal(l^.elem, Invertir(l^.sig)); </td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+Intenta implementar las operaciones <span style="font-weight: bold">InsertarAlFinal</span> con el encabezado:
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">InsertarAlFinal(elem: Elemento, l: Lista)
+<br>
+(* Inserta "elem" al final de la lista "l" *)
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+e implementa <span style="font-weight: bold">Invertir</span>, aunque de esta última ya te dí una opción para el llamado recursivo.
+<br>
+
+<br>
+Date cuenta que la lista devuelta "se construye" en la vuelta de la 
+recursión, como pasa muchas veces en este tema. Además la lista que se 
+devuelve es distinta a la original.
+<br>
+
+<br>
+Cualquier cosa nos comentas.
+<br>
+Saludos.</span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=124296"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row3" valign="top" width="150"><span class="name"><a name="34333"></a><b>xRoki</b></span><br><span class="postdetails">Usuario Inquieto<br><br><br>Registrado: 22 Ago 2013<br>Mensajes: 71<br></span><br></td>
+		<td class="row3" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=34333#34333"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 07 Oct 2013 01:36</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=34333"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">EJERCICIO 1 
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">
+<br>
+PROCEDURE SonIguales(lista1 , lista2 : Tipos): BOOLEAN;
+<br>
+
+<br>
+
+<br>
+BEGIN
+<br>
+&nbsp;IF (lista1=NIL) AND (lista2=NIL) THEN
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;RETURN TRUE;
+<br>
+&nbsp; &nbsp; &nbsp;END;
+<br>
+
+<br>
+IF lista1^.numero=lista2^.numero THEN
+<br>
+
+<br>
+&nbsp; &nbsp;IF SonIguales(lista1^.siguiente,lista2^.siguiente) THEN
+<br>
+
+<br>
+&nbsp; &nbsp; RETURN TRUE;
+<br>
+
+<br>
+&nbsp; &nbsp; ELSE RETURN FALSE;
+<br>
+
+<br>
+&nbsp; &nbsp;END;
+<br>
+
+<br>
+ELSIF lista1^.numero&lt;&gt;lista2^.numero THEN
+<br>
+
+<br>
+&nbsp; &nbsp;RETURN FALSE;
+<br>
+
+<br>
+
+<br>
+END;
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+END SonIguales;
+<br>
+
+<br>
+
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+
+<br>
+EJERCICIO 2 
+<br>
+
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE ExisteElemento(x : INTEGER; lista : Tipos): BOOLEAN;
+<br>
+BEGIN
+<br>
+
+<br>
+IF lista=NIL THEN
+<br>
+RETURN FALSE;
+<br>
+END;
+<br>
+
+<br>
+
+<br>
+
+<br>
+IF lista&lt;&gt;NIL THEN
+<br>
+
+<br>
+IF lista^.numero&lt;&gt;x THEN
+<br>
+
+<br>
+IF ExisteElemento(x,lista^.siguiente) THEN
+<br>
+RETURN TRUE
+<br>
+
+<br>
+ELSE
+<br>
+RETURN FALSE;
+<br>
+END;
+<br>
+
+<br>
+ELSIF lista^.numero=x THEN
+<br>
+RETURN TRUE;
+<br>
+
+<br>
+END;
+<br>
+
+<br>
+END;
+<br>
+
+<br>
+END ExisteElemento;</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+EJERCICIO 3 
+<br>
+
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE Ocurrencia(x : INTEGER ; l : Tipos):&nbsp; INTEGER;
+<br>
+VAR
+<br>
+
+<br>
+
+<br>
+BEGIN
+<br>
+
+<br>
+
+<br>
+
+<br>
+IF l&lt;&gt;NIL THEN
+<br>
+
+<br>
+IF l^.numero=x THEN
+<br>
+RETURN Ocurrencia(x,l^.siguiente)+1;
+<br>
+
+<br>
+ELSIF l^.numero&lt;&gt;x THEN
+<br>
+RETURN Ocurrencia(x,l^.siguiente);
+<br>
+
+<br>
+END;
+<br>
+
+<br>
+ELSE
+<br>
+
+<br>
+RETURN 0;
+<br>
+END;
+<br>
+
+<br>
+END Ocurrencia;
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE Suma(l:Tipos): INTEGER;
+<br>
+VAR
+<br>
+a: INTEGER;
+<br>
+BEGIN
+<br>
+
+<br>
+IF l&lt;&gt;NIL THEN
+<br>
+
+<br>
+a:=l^.numero;
+<br>
+
+<br>
+RETURN Suma(l^.siguiente)+a;
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+ELSE RETURN 0;
+<br>
+
+<br>
+
+<br>
+END;
+<br>
+
+<br>
+
+<br>
+END Suma;</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+EJERCICIO 4 
+<br>
+Este Ejericico me dio una leccion de que si te enredaste no importa lo 
+qhayas echo xD borralo .. porque al principio todo mal no me salio , y 
+tard emucho xD luego fui atomar agua , borre lo q tenia y en unos 
+segundos lo hice. xD jajaja
+<br>
+
+<br>
+</span><table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE Eliminar(x :INTEGER; VAR&nbsp; l : Tipos);
+<br>
+VAR
+<br>
+a: INTEGER;
+<br>
+BEGIN
+<br>
+
+<br>
+
+<br>
+
+<br>
+&nbsp; &nbsp;IF (l^.siguiente=NIL) AND (x=l^.numero) THEN
+<br>
+&nbsp; &nbsp;l:=NIL;
+<br>
+
+<br>
+&nbsp; &nbsp;ELSIF (x=l^.numero) AND (l^.siguiente&lt;&gt;NIL) THEN
+<br>
+
+<br>
+&nbsp; &nbsp;a:=l^.numero;
+<br>
+&nbsp; &nbsp;l^.numero:=l^.siguiente^.numero;
+<br>
+&nbsp; &nbsp;l^.siguiente^.numero:=a;
+<br>
+&nbsp; Eliminar(x,l^.siguiente);
+<br>
+
+<br>
+&nbsp; &nbsp;ELSIF (x&lt;&gt;l^.numero) THEN
+<br>
+&nbsp; &nbsp;Eliminar(x,l^.siguiente);
+<br>
+
+<br>
+
+<br>
+
+<br>
+&nbsp; &nbsp;END;
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+END Eliminar;
+<br>
+
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+
+<br>
+OK TERMINE LA PARTE FACIL XD</span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row3" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row3" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=255393"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=255393"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+	<tr>
+		<td class="row1" valign="top" width="150"><span class="name"><a name="34334"></a><b>xRoki</b></span><br><span class="postdetails">Usuario Inquieto<br><br><br>Registrado: 22 Ago 2013<br>Mensajes: 71<br></span><br></td>
+		<td class="row1" height="28" valign="top" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="100%"><a href="http://www.foro.lospillaos.es/viewtopic.php?p=34334#34334"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_minipost.gif" alt="Mensaje" title="Mensaje" height="9" width="12" border="0"></a>
+            <span class="postdetails" style="margin-right:10px;">Publicado: Lunes 07 Oct 2013 02:35</span>
+            <h3 class="gen"><b>Título del mensaje</b>: Re: Programando desde 0: 38- Ejercicios de recursividad.</h3></td>
+          <td nowrap="nowrap" valign="top"><a href="http://www.foro.lospillaos.es/posting.php?mode=quote&amp;p=34334"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_quote.gif" alt="Responder citando" title="Responder citando" border="0"></a>   </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="separador"><!--SEPARADOR--></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p class="postbody">EJERCICIO 5
+<br>
+
+<br>
+xD sera la ultima qhaga hoy xD manaña tengo clases <img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_sad.gif" alt="Triste" border="0">
+<br>
+
+<br>
+<table class="forumline" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Código:</b></span></td>	</tr>	<tr>	  <td class="code">PROCEDURE InsertarOrdenado(VAR x :INTEGER;&nbsp; VAR l: Tipos);
+<br>
+VAR
+<br>
+a: INTEGER;
+<br>
+BEGIN
+<br>
+
+<br>
+IF l&lt;&gt;NIL&nbsp; THEN
+<br>
+IF x&lt;l^.numero THEN
+<br>
+
+<br>
+a:=l^.numero;
+<br>
+l^.numero:=x;
+<br>
+x:=a;
+<br>
+
+<br>
+
+<br>
+InsertarOrdenado(x,l^.siguiente);
+<br>
+
+<br>
+ELSIF x&gt;l^.numero THEN
+<br>
+
+<br>
+InsertarOrdenado(x,l^.siguiente);
+<br>
+
+<br>
+ELSIF x=l^.numero THEN
+<br>
+
+<br>
+InsertarOrdenado(x,l^.siguiente);
+<br>
+END;
+<br>
+END;
+<br>
+
+<br>
+&nbsp;IF l=NIL THEN
+<br>
+
+<br>
+NEW(l);
+<br>
+l^.numero:=x;
+<br>
+
+<br>
+&nbsp;END;
+<br>
+
+<br>
+
+<br>
+END InsertarOrdenado;
+<br>
+</td>	</tr></tbody></table><span class="postbody"></span></p></td><!--EDIT el td de abajo lo he creado con parte de este -->
+        </tr>
+        <tr>
+          <td colspan="2" class="separador">
+            <!--<p class="postbody">--><!--</p>-->
+            
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+	</tr>
+	<tr>
+		<td class="row1" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Volver arriba</a></span></td>
+		<td class="row1" height="28" nowrap="nowrap" valign="bottom" width="100%">
+    	<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=255393"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_profile.gif" alt="Ver perfil del usuario" title="Ver perfil del usuario" border="0"></a> <a href="http://www.foro.lospillaos.es/privmsg.php?mode=post&amp;u=255393"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_pm.gif" alt="Enviar mensaje privado" title="Enviar mensaje privado" border="0"></a>     
+				<script language="JavaScript" type="text/javascript"><!--
+					if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )	document.write(' ');
+					else
+						document.write('');
+				//--></script><noscript> </noscript></td>
+			</tr><!--</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"> </div><div style="position:absolute;left:3px;top:-1px-->
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2"></td>
+ 	</tr>
+</tbody></table>
+
+<table class="forumline" style="margin-top:0px" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td style="vertical-align:bottom; white-space:nowrap">
+    <span class="nav"><a href="http://www.foro.lospillaos.es/posting.php?mode=reply&amp;t=9853"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/reply.gif" alt="Responder al Tema" align="middle" border="0"></a></span>
+<!--       <a href="posting.php?mode=reply&amp;t=9853" class="nav"><input type="submit" class="liteoption" value="Responder al Tema" alt="Responder al Tema" /></a> -->
+    </td>
+    <td style="text-align:right">
+    	<span class="gensmall"><b><span class="paginacion">Ir a página</span> <span class="paginacion_activo">1</span><span class="paginacion_inactivo"><a href="http://www.foro.lospillaos.es/2-vt9853.html?amp;postdays=0&amp;postorder=asc&amp;start=15">2</a></span><span class="paginacion2"><a href="http://www.foro.lospillaos.es/siguiente-vt9853.html?amp;postdays=0&amp;postorder=asc&amp;start=15">Siguiente</a></span></b></span><br>
+        <div style="margin-top: 4px" class="gensmall"><img style="vertical-align:middle" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/topic_go_previous.gif"> <a href="http://www.foro.lospillaos.es/ver-tema-anterior-vt9853.html?amp;&amp;view=previous">Ver tema anterior</a> | <a href="http://www.foro.lospillaos.es/ver-siguiente-tema-vt9853.html?amp;&amp;view=next">Ver siguiente tema</a> <img style="vertical-align:middle" src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/topic_go_next.gif"></div>
+        </td>
+  </tr>
+</tbody></table>
+<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td>
+    	<form method="post" action="viewtopic.php?t=9853&amp;start=0">
+	        <span class="gensmall">Mostrar mensajes anteriores: <select name="postdays"><option value="0" selected="selected">Todos los mensajes</option><option value="1">1 Día</option><option value="7">7 Días</option><option value="14">2 Semanas</option><option value="30">1 Mes</option><option value="90">3 Meses</option><option value="180">6 Meses</option><option value="364">1 Año</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">El más antiguo primero</option><option value="desc">El más reciente primero</option></select>&nbsp;
+					<input value="Ir" class="liteoption" name="submit" type="submit"></span>
+    	</form>
+        </td>
+    	<td style="text-align:right">
+    		
+<form method="get" name="jumpbox" action="viewforum.php" onsubmit="if(document.jumpbox.f.value == -1){return false;}">
+    <span class="gensmall">Ir a:&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Seleccione un foro</option><option value="-1">&nbsp;</option><option value="-1">Foros de debate y temas generales</option><option value="-1">----------------</option><option value="1">Preséntate a la comunidad</option><option value="2">Temas generales</option><option value="4">Dudas, criticas constructivas o sugerencias</option><option value="58">Proyecto de encriptación - CriptoPilla</option><option value="-1">&nbsp;</option><option value="-1">Foros de programación de escritorio</option><option value="-1">----------------</option><option value="30" selected="selected">Programación en general</option><option value="60">Programación para dispositivos móviles</option><option value="21">Visual Basic .NET</option><option value="22">Visual Basic y VBA</option><option value="71">ASM</option><option value="33">C, C#, Visual C++</option><option value="59">Java</option><option value="72">Python</option><option value="55">Delphi</option><option value="38">Excel</option><option value="35">Visual Fox Pro</option><option value="28">Programación de juegos o videojuegos</option><option value="46">Pseudocódigo o notación pseudocodificada</option><option value="-1">&nbsp;</option><option value="-1">Foros de programación Web</option><option value="-1">----------------</option><option value="56">Programación Web en general</option><option value="57">CMS</option><option value="24">PHP</option><option value="25">ASP, ASP.NET</option><option value="26">JavaScript</option><option value="69">Java Web</option><option value="34">HTML y CSS</option><option value="48">Posicionamiento Web en buscadores</option><option value="49">Optimización Web</option><option value="-1">&nbsp;</option><option value="-1">Foros de diseño gráfico</option><option value="-1">----------------</option><option value="7">Diseño gráfico en general</option><option value="8">Flash</option><option value="10">PhotoShop</option><option value="12">3D</option><option value="42">Illustrator</option><option value="43">Indesign</option><option value="44">Muestra tus trabajos Web</option><option value="-1">&nbsp;</option><option value="-1">Foros de gestión y optimización de bases de datos</option><option value="-1">----------------</option><option value="47">SQL - Lenguaje SQL</option><option value="15">SQL Server</option><option value="14">MySql</option><option value="40">Otras bases de datos</option><option value="-1">&nbsp;</option><option value="-1">Foros para tratar temas de trabajo y negocios en la Web</option><option value="-1">----------------</option><option value="50">Bolsa de trabajo</option><option value="51">Temas legales</option><option value="52">Formas de pago en la Web</option><option value="-1">&nbsp;</option><option value="-1">Foros para el trabajo, ocio y tiempo libre</option><option value="-1">----------------</option><option value="67">Hosting</option><option value="54">Redes</option><option value="53">Ofimática</option><option value="36">S.O. Windows</option><option value="39">S.O. Linux</option><option value="68">Tu PC</option><option value="18">Humor y entretenimiento</option></select><input name="sid" value="7af506f237f4ecfc065779b7aed942a8" type="hidden">&nbsp;<input value="Ir" class="liteoption" type="submit"></span>
+</form>
+
+				<span class="gensmall" style="margin-top: 0px">Todas las horas están en GMT + 1 Hora</span>
+       </td>
+    </tr>
+</tbody></table>
+
+<!--Edit temas similares-->
+<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+  	<td class="catLeft" colspan="6"><h2 class="cattitle">Temas relacionados</h2></td>
+ 	</tr>
+ 	<tr>
+    <th class="thCornerL" colspan="2">Tema</th>
+    <th class="thTop" nowrap="nowrap" width="100">Autor</th>
+    <th class="thTop" nowrap="nowrap" width="100">Foros</th>
+    <th class="thTop">Respuestas</th>
+    <th class="thCornerR">Publicado</th>
+ 	</tr>
+ 	<tr>
+  	<td class="row3"><span class="genmed"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/folder.gif" alt="El foro no contiene ningún mensaje nuevo" title="El foro no contiene ningún mensaje nuevo" border="0"></span></td>
+  	<td class="row3" width="100%"><h3 class="topictitle">  <a href="http://www.foro.lospillaos.es/porque-no-puedo-descargar-archivos-desde-la-nube-vt16060.html">Porque no puedo descargar archivos desde la nube?</a></h3></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=331656">reeccom</a></span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/visual-basic-net-vf21.html">Visual Basic .NET</a></span></td>
+  	<td class="row2"><span class="genmed">0</span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed">Sábado 28 May 2016 17:08 <a href="http://www.foro.lospillaos.es/viewtopic.php?p=41028#41028"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_latest_reply.gif" alt="Ver último mensaje" title="Ver último mensaje" border="0"></a></span></td>
+ 	</tr>
+ 	<tr>
+  	<td class="row3"><span class="genmed"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/folder.gif" alt="El foro no contiene ningún mensaje nuevo" title="El foro no contiene ningún mensaje nuevo" border="0"></span></td>
+  	<td class="row3" width="100%"><h3 class="topictitle">  <a href="http://www.foro.lospillaos.es/quieres-ganar-pasta-trabajando-programado-desde-vt16006.html">Quieres ganar pasta trabajando programado desde...</a></h3></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=26492">WhiteSkull</a></span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/redes-vf54.html">Redes</a></span></td>
+  	<td class="row2"><span class="genmed">1</span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed">Martes 19 Abr 2016 23:25 <a href="http://www.foro.lospillaos.es/viewtopic.php?p=40913#40913"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_latest_reply.gif" alt="Ver último mensaje" title="Ver último mensaje" border="0"></a></span></td>
+ 	</tr>
+ 	<tr>
+  	<td class="row3"><span class="genmed"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/folder.gif" alt="El foro no contiene ningún mensaje nuevo" title="El foro no contiene ningún mensaje nuevo" border="0"></span></td>
+  	<td class="row3" width="100%"><h3 class="topictitle">  <a href="http://www.foro.lospillaos.es/notificaciones-desde-aspnet-al-area-de-notific-vt15960.html">Notificaciones desde Asp.net al area de notific...</a></h3></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=326598">TONYMR</a></span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/asp-aspnet-vf25.html">ASP, ASP.NET</a></span></td>
+  	<td class="row2"><span class="genmed">1</span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed">Lunes 22 Feb 2016 19:19 <a href="http://www.foro.lospillaos.es/viewtopic.php?p=40807#40807"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_latest_reply.gif" alt="Ver último mensaje" title="Ver último mensaje" border="0"></a></span></td>
+ 	</tr>
+ 	<tr>
+  	<td class="row3"><span class="genmed"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/folder.gif" alt="El foro no contiene ningún mensaje nuevo" title="El foro no contiene ningún mensaje nuevo" border="0"></span></td>
+  	<td class="row3" width="100%"><h3 class="topictitle">  <a href="http://www.foro.lospillaos.es/imprimir-en-escp-desde-java-vt15802.html">imprimir en esc/p desde java</a></h3></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=320945">christianvmc</a></span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/java-vf59.html">Java</a></span></td>
+  	<td class="row2"><span class="genmed">2</span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed">Sábado 07 Nov 2015 15:46 <a href="http://www.foro.lospillaos.es/viewtopic.php?p=41005#41005"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_latest_reply.gif" alt="Ver último mensaje" title="Ver último mensaje" border="0"></a></span></td>
+ 	</tr>
+ 	<tr>
+  	<td class="row3"><span class="genmed"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/folder.gif" alt="El foro no contiene ningún mensaje nuevo" title="El foro no contiene ningún mensaje nuevo" border="0"></span></td>
+  	<td class="row3" width="100%"><h3 class="topictitle">  <a href="http://www.foro.lospillaos.es/return-en-recursividadlenguaje-c-vt15797.html">Return en recursividad(Lenguaje C)</a></h3></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/profile.php?mode=viewprofile&amp;u=23566">DanielC</a></span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed"><a href="http://www.foro.lospillaos.es/c-c-visual-c--vf33.html">C, C#, Visual C++</a></span></td>
+  	<td class="row2"><span class="genmed">1</span></td>
+  	<td class="row3" nowrap="nowrap"><span class="genmed">Miércoles 28 Oct 2015 18:58 <a href="http://www.foro.lospillaos.es/viewtopic.php?p=40495#40495"><img src="Programando%20desde%200:%2038-%20Ejercicios%20de%20recursividad.%20-%20Foros%20de%20programaci%C3%B3n%20inform%C3%A1tica%20-%20Comunidad%20de%20programaci%C3%B3n_files/icon_latest_reply.gif" alt="Ver último mensaje" title="Ver último mensaje" border="0"></a></span></td>
+ 	</tr>
+</tbody></table>
+<!--Fin edit-->
+
+<table class="forumline" border="0" cellspacing="0">
+    <tbody><tr>
+      <th colspan="2" class="thCornerL" nowrap="nowrap">Panel de Control</th>
+		</tr>
+		<tr>
+			<td class="row1"><span class="gensmall"><b>No puede</b> crear mensajes, <b>No puede</b> responder temas, <b>No puede</b> editar sus mensajes, <b>No puede</b> borrar sus mensajes, <b>No puede</b> votar en encuestas, </span></td>
+		</tr>
+		<tr>
+			<td class="row3">
+				<span class="gensmall"></span>
+			</td>
+		
+</tr></tbody></table>
+
+
+<!--EDIT admin -->
+<table class="forumline" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="centro"><br><br>
+		</td>
+	</tr>
+</tbody></table>
+<!--FIN EDIT Admin -->
+
+<div class="footer">
+		<span>Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a>  © 2001, 2002 phpBB Group.
+		Diseñado y modificado por el equipo <a href="http://www.lospillaos.es/" class="copyright">LosPillaos</a> 2009</span>
+</div>
+
+
+
+
+
+
+</body></html>
